@@ -180,7 +180,7 @@ export function PhotoPlaceholder() {
   return (
     <div className="relative overflow-hidden rounded-[18px] border border-line bg-forest text-ivory">
       <div className="grid-hairlines absolute inset-0 opacity-[0.14]" aria-hidden="true" />
-      <div className="relative flex aspect-[4/5] flex-col justify-between p-6 sm:p-8">
+      <div className="relative flex aspect-[4/5] flex-col justify-between p-6 pb-8 sm:p-8 md:pb-44">
         <div className="flex items-center justify-between">
           <span className="pill border-ivory/25 text-ivory/80">
             <CountryMark mark="ng" className="h-3.5 w-3.5" />

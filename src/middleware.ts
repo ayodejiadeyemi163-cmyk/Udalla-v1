@@ -12,6 +12,11 @@ const PROTECTED = ["/dashboard", "/admin", "/lawyer"];
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const visitor = request.cookies.get(VISITOR_COOKIE)?.value;
+  const newVisitor = visitor ? null : crypto.randomUUID();
+
+  // Make the new visitor id visible to this same render, not only to the next
+  // request, so the first draft is created under the right visitor.
+  if (newVisitor) request.cookies.set(VISITOR_COOKIE, newVisitor);
 
   let response: NextResponse;
 
@@ -33,14 +38,14 @@ export async function middleware(request: NextRequest) {
       url.search = `?next=${encodeURIComponent(pathname)}`;
       response = NextResponse.redirect(url);
     } else {
-      response = NextResponse.next();
+      response = NextResponse.next({ request: { headers: request.headers } });
     }
   } else {
-    response = NextResponse.next();
+    response = NextResponse.next({ request: { headers: request.headers } });
   }
 
-  if (!visitor) {
-    response.cookies.set(VISITOR_COOKIE, crypto.randomUUID(), {
+  if (newVisitor) {
+    response.cookies.set(VISITOR_COOKIE, newVisitor, {
       httpOnly: true,
       sameSite: "lax",
       secure: process.env.NODE_ENV === "production",

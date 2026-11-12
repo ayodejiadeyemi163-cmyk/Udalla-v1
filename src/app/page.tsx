@@ -224,7 +224,7 @@ export default async function HomePage({
             <div className="absolute -left-8 bottom-12 hidden md:block">
               <StatusCard />
             </div>
-            <div className="absolute -right-4 top-8 hidden md:block">
+            <div className="absolute -right-4 top-24 hidden md:block">
               <DeadlineCard />
             </div>
             <div className="mt-4 grid grid-cols-2 gap-3 md:hidden">

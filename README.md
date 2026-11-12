@@ -48,7 +48,7 @@ Open http://localhost:3000. Go to `/login` and use the demo accounts:
 | Lawyer | demo.lawyer@udalla.org | Only matters assigned to this lawyer |
 | Admin | demo.admin@udalla.org | Orders, pricing, content, lawyers, leads, outbox |
 
-Demo sign in is a button on the login page, no password. The demo store lives in memory and resets when the server restarts.
+Demo sign in is a button on the login page, no password. The demo store lives in memory and resets when the server restarts. On the hosted preview it also writes to a small D1 table (`demo_state`), so drafts, orders and admin edits survive across server instances. Reset it by clearing that row, or set `DEMO_MODE=false` to turn the whole demo off.
 
 ## Scripts
 

@@ -391,6 +391,23 @@ export function resetDemoStore(): void {
   globalStore.__udallaDemoDb = seedDb();
 }
 
+/**
+ * The demo database is a plain object. Exporting it lets the hosted preview
+ * keep demo state in the site database, so a draft survives a refresh or a
+ * request handled by a different server instance.
+ */
+export function exportDemoState(): string {
+  return JSON.stringify(db());
+}
+
+export function importDemoState(json: string): void {
+  const parsed = JSON.parse(json) as Db;
+  if (!parsed || !Array.isArray(parsed.users) || !parsed.settings) {
+    throw new Error("Demo state is not readable");
+  }
+  globalStore.__udallaDemoDb = parsed;
+}
+
 function clone<T>(value: T): T {
   return structuredClone(value);
 }
