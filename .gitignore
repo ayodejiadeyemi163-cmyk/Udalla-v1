@@ -1,0 +1,31 @@
+node_modules/
+.next/
+.open-next/
+.wrangler/
+out/
+build/
+dist/
+coverage/
+
+# Every environment file, including local ones, is ignored.
+.env
+.env.*
+!.env.example
+
+# Secrets that must never be committed.
+*.pem
+*.key
+.secret*
+supabase/.temp/
+
+# Logs and local artifacts.
+*.log
+npm-debug.log*
+.DS_Store
+.vercel
+.idea/
+.vscode/
+*.tsbuildinfo
+next-env.d.ts
+test-results/
+screenshots/*.png
