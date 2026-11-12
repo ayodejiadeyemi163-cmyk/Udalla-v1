@@ -14,7 +14,9 @@ export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!readConsent()) setVisible(true);
+    if (readConsent()) return;
+    const timer = window.setTimeout(() => setVisible(true), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   function choose(value: "accepted" | "rejected") {
