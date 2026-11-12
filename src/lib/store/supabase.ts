@@ -213,6 +213,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   governmentFeeWaived: [],
   compliancePrices: {},
   websiteRanges: {},
+  serviceCopy: {},
 };
 
 class SupabaseStore implements Store {

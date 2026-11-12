@@ -75,6 +75,7 @@ function defaultSettings(): SiteSettings {
     governmentFeeWaived: [],
     compliancePrices: {},
     websiteRanges: {},
+    serviceCopy: {},
   };
 }
 

@@ -210,6 +210,7 @@ export interface SiteSettings {
   governmentFeeWaived: string[];
   compliancePrices: Record<string, number>;
   websiteRanges: Record<string, { from: number; to: number | null }>;
+  serviceCopy: Record<string, { name?: string; shortDescription?: string }>;
 }
 
 export interface PriceChange {

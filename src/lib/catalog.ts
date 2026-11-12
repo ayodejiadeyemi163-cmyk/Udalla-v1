@@ -45,8 +45,12 @@ function withPackages(
     } satisfies PackageDefinition;
   });
 
+  const copy = settings.serviceCopy[service.slug] ?? {};
+
   return {
     ...service,
+    name: copy.name ?? service.name,
+    shortDescription: copy.shortDescription ?? service.shortDescription,
     packages,
     governmentFee: settings.governmentFees[service.slug] ?? service.governmentFee,
     governmentFeeWaived: settings.governmentFeeWaived.includes(service.slug),
@@ -68,7 +72,7 @@ export async function getCatalog(): Promise<Catalog> {
       if (!range) return tier;
       return { ...tier, from: range.from, to: range.to, quoteOnly: range.to === null };
     }),
-    settings,
+    settings: { ...settings, serviceCopy: settings.serviceCopy ?? {} },
   };
 }
 
