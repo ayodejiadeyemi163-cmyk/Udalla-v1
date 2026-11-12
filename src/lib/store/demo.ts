@@ -444,6 +444,12 @@ class DemoStore implements Store {
     return clone(this.data.orders.find((order) => order.id === id) ?? null);
   }
 
+  async getOrderByReference(reference: string) {
+    return clone(
+      this.data.orders.find((order) => order.reference === reference) ?? null,
+    );
+  }
+
   async listOrdersByUser(userId: string) {
     return clone(
       this.data.orders

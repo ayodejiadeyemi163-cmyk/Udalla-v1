@@ -7,14 +7,7 @@ import { sendEmail } from "@/lib/mail";
 import { checkRateLimit, clientKey } from "@/lib/rate-limit";
 import { recordAudit } from "@/lib/audit";
 import { fieldErrors, leadSchema } from "@/lib/validation";
-
-export interface FormState {
-  ok: boolean;
-  errors: Record<string, string>;
-  message: string;
-}
-
-export const emptyFormState: FormState = { ok: false, errors: {}, message: "" };
+import type { FormState } from "@/lib/form-state";
 
 export async function submitEnquiry(
   _previous: FormState,

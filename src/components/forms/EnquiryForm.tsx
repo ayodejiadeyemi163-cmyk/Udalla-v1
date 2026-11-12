@@ -1,8 +1,9 @@
 "use client";
 
 import { useActionState } from "react";
-import { emptyFormState, submitEnquiry } from "@/app/actions/public";
+import { submitEnquiry } from "@/app/actions/public";
 import { Check } from "@/components/ui/Marks";
+import { emptyFormState } from "@/lib/form-state";
 
 const projectTypes = [
   "Starter site",

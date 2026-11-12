@@ -61,6 +61,7 @@ export interface Draft {
   userId: string | null;
   country: CountrySlug;
   service: string;
+  contactEmail: string;
   step: number;
   packageTier: PackageTier;
   addOns: string[];
@@ -260,6 +261,7 @@ export interface Store {
 
   createOrder(order: Order): Promise<Order>;
   getOrder(id: string): Promise<Order | null>;
+  getOrderByReference(reference: string): Promise<Order | null>;
   listOrdersByUser(userId: string): Promise<Order[]>;
   listAllOrders(): Promise<Order[]>;
   updateOrder(id: string, patch: Partial<Order>): Promise<Order | null>;

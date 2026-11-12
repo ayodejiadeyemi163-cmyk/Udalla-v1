@@ -34,6 +34,12 @@ const plex = IBM_Plex_Mono({
 
 const fonts = `${fraunces.variable} ${instrument.variable} ${plex.variable}`;
 
+/**
+ * Every route is server rendered. The shell reads admin editable settings and
+ * the signed in user, and prices must never be frozen into a static build.
+ */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   metadataBase: new URL(brand.siteUrl),
   title: {

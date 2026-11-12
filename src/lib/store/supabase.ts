@@ -287,6 +287,18 @@ class SupabaseStore implements Store {
     return order;
   }
 
+  async getOrderByReference(reference: string) {
+    const { data } = await client()
+      .from("orders")
+      .select("*")
+      .eq("reference", reference)
+      .maybeSingle();
+    if (!data) return null;
+    const order = toOrder(data as Row);
+    order.documents = await this.listDocumentsByOrder(order.id);
+    return order;
+  }
+
   async listOrdersByUser(userId: string) {
     const { data } = await client()
       .from("orders")
