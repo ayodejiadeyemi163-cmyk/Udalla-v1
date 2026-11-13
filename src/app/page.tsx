@@ -3,12 +3,9 @@ import Link from "next/link";
 
 import { StartForm } from "@/components/home/StartForm";
 import {
-  DeadlineCard,
   DeadlineMock,
   EnquiryMock,
   OrderTrackerMock,
-  PhotoPlaceholder,
-  StatusCard,
   UploadMock,
 } from "@/components/mocks/Screens";
 import { ClosingBanner } from "@/components/site/ClosingBanner";
@@ -201,18 +198,18 @@ export default async function HomePage({
             <h1 className="display mt-5 text-[clamp(2.7rem,2rem+4.4vw,5.1rem)]">
               Register your business, then stay compliant.
             </h1>
-            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/75">
-              Guided filing in three countries, prices shown up front, and a dashboard that
-              shows exactly where your order stands.
+            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-navy-950/75">
+              We prepare and submit your filing, show the government fee before you pay, and
+              track every stage in your dashboard.
             </p>
 
             <StartForm countries={formCountries} />
-            <p className="mono mt-3 text-[12px] text-ink/60">{heroPriceLine}</p>
+            <p className="mono mt-3 text-[12px] text-slate-muted">{heroPriceLine}</p>
 
-            <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-5">
+            <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-cream-300 pt-5">
               {brand.proofPoints.map((point) => (
-                <li key={point} className="flex items-center gap-2 text-[12.5px] text-ink/70">
-                  <span className="h-1 w-1 rounded-full bg-marigold" aria-hidden="true" />
+                <li key={point} className="flex items-center gap-2 text-[12.5px] text-navy-950/70">
+                  <span className="h-1 w-1 rounded-full bg-emerald-600" aria-hidden="true" />
                   {point}
                 </li>
               ))}
@@ -220,27 +217,20 @@ export default async function HomePage({
           </div>
 
           <div className="relative lg:col-span-5">
-            <PhotoPlaceholder />
-            <div className="absolute -left-8 bottom-12 hidden md:block">
-              <StatusCard />
-            </div>
-            <div className="absolute -right-4 top-24 hidden md:block">
-              <DeadlineCard />
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-3 md:hidden">
-              <StatusCard />
-              <DeadlineCard />
-            </div>
+            <OrderTrackerMock />
+            <p className="mt-3 text-[11.5px] text-slate-muted">
+              Example order, from payment to certificate.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="steps" className="border-y border-line bg-paper">
+      <section id="steps" className="border-y border-cream-300 bg-cream-50">
         <div className="wrap py-16 md:py-24">
           <SectionHeading
             eyebrow="The whole path"
             title="Four steps, one place"
-            intro="Registration is the start. The same dashboard carries the documents, the deadlines and the website that follows."
+            intro="Registration is the start. The same dashboard carries deadlines and renewals."
           />
 
           <div className="mt-9 flex flex-wrap gap-1.5">
@@ -253,8 +243,8 @@ export default async function HomePage({
                   aria-current={active ? "page" : undefined}
                   className={`rounded-full border px-4 py-2 text-[13px] transition ${
                     active
-                      ? "border-forest bg-forest text-ivory"
-                      : "border-line text-ink/70 hover:border-ink/40 hover:text-ink"
+                      ? "border-navy-900 bg-navy-900 text-cream-100"
+                      : "border-cream-300 text-navy-950/70 hover:border-navy-950/40 hover:text-navy-950"
                   }`}
                 >
                   <span className="mono mr-2 text-[11px] opacity-60">{step.numeral}</span>
@@ -270,11 +260,11 @@ export default async function HomePage({
               <h3 className="mt-4 font-display text-[clamp(1.7rem,1.4rem+1.4vw,2.4rem)] tracking-[-0.03em]">
                 {activeStep.title}
               </h3>
-              <p className="mt-4 text-[15.5px] leading-relaxed text-ink/75">{activeStep.body}</p>
-              <ul className="mt-6 space-y-2.5 border-t border-line pt-5">
+              <p className="mt-4 text-[15.5px] leading-relaxed text-navy-950/75">{activeStep.body}</p>
+              <ul className="mt-6 space-y-2.5 border-t border-cream-300 pt-5">
                 {activeStep.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-2.5 text-[14px] text-ink/80">
-                    <span className="mt-2 h-1 w-1 flex-none rounded-full bg-forest" aria-hidden="true" />
+                  <li key={bullet} className="flex gap-2.5 text-[14px] text-navy-950/80">
+                    <span className="mt-2 h-1 w-1 flex-none rounded-full bg-navy-900" aria-hidden="true" />
                     {bullet}
                   </li>
                 ))}
@@ -285,12 +275,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="bg-ivory">
+      <section className="bg-cream-100">
         <div className="wrap py-16 md:py-24">
           <SectionHeading
             eyebrow="Packages"
             title="Three packages, no hidden extras"
-            intro="Every package includes the filing, the certificate and dashboard tracking. Government fees sit separately at cost."
+            intro="Every package includes the filing, the certificate and dashboard tracking."
           />
           {featuredService ? (
             <div className="mt-9">
@@ -304,12 +294,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="border-y border-line bg-paper">
+      <section className="border-y border-cream-300 bg-cream-50">
         <div className="wrap py-16 md:py-24">
           <SectionHeading
             eyebrow="Where are you now"
             title="Start from the step you are on"
-            intro="Pick the state that sounds like you. Each one leads to the four pages founders use most."
+            intro="Pick the stage you are at and start there."
           />
 
           <div className="mt-8 flex flex-wrap gap-1.5">
@@ -322,8 +312,8 @@ export default async function HomePage({
                   aria-current={active ? "page" : undefined}
                   className={`rounded-full border px-4 py-2 text-[13px] transition ${
                     active
-                      ? "border-forest bg-forest text-ivory"
-                      : "border-line text-ink/70 hover:border-ink/40 hover:text-ink"
+                      ? "border-navy-900 bg-navy-900 text-cream-100"
+                      : "border-cream-300 text-navy-950/70 hover:border-navy-950/40 hover:text-navy-950"
                   }`}
                 >
                   {entry.label}
@@ -333,7 +323,7 @@ export default async function HomePage({
           </div>
 
           <div id="where" key={activeWhere.id} className="step-enter mt-8">
-            <p className="text-[15px] text-ink/70">{activeWhere.intro}</p>
+            <p className="text-[15px] text-navy-950/70">{activeWhere.intro}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {activeWhere.links.map((link, index) => (
                 <Link
@@ -341,14 +331,14 @@ export default async function HomePage({
                   href={link.href}
                   className="card group flex flex-col justify-between gap-6 p-5 transition hover:-translate-y-0.5 hover:shadow-lift"
                 >
-                  <span className="mono text-[11px] text-muted">
+                  <span className="mono text-[11px] text-slate-muted">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="flex items-end justify-between gap-2">
                     <span className="font-display text-[19px] leading-tight tracking-[-0.02em]">
                       {link.label}
                     </span>
-                    <ArrowRight className="mb-1 flex-none text-forest transition group-hover:translate-x-0.5" />
+                    <ArrowRight className="mb-1 flex-none text-navy-900 transition group-hover:translate-x-0.5" />
                   </span>
                 </Link>
               ))}
@@ -359,16 +349,15 @@ export default async function HomePage({
 
       <Reviews />
 
-      <section className="bg-ivory">
+      <section className="bg-cream-100">
         <div className="wrap grid gap-10 py-16 md:py-24 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="eyebrow">Questions</p>
             <h2 className="display mt-4 text-[clamp(2rem,1.5rem+2vw,3.2rem)]">
               The things founders ask first
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink/70">
-              Straight answers on timing, fees and who does what. The full list sits on the
-              FAQ page.
+            <p className="mt-4 text-[15px] leading-relaxed text-navy-950/70">
+              Straight answers on timing, fees and who does what.
             </p>
             <Link href="/faq" className="link-quiet mt-5 inline-block text-[14px]">
               Read all questions
@@ -380,12 +369,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="border-y border-line bg-paper">
+      <section className="border-y border-cream-300 bg-cream-50">
         <div className="wrap py-16 md:py-24">
           <SectionHeading
             eyebrow="Guides"
             title="Read before you file"
-            intro="Plain explanations of what each registry wants, written by the team that files every week."
+            intro="Plain explanations of what each registry asks for."
             action={
               <Link href="/guides" className="btn btn-outline">
                 Browse all guides
@@ -398,7 +387,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="bg-ivory">
+      <section className="bg-cream-100">
         <div className="wrap py-16 md:py-24">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -406,7 +395,7 @@ export default async function HomePage({
               <h2 className="display mt-4 text-[clamp(2rem,1.5rem+2vw,3.4rem)]">
                 {brand.lawyerSectionTitle}
               </h2>
-              <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-ink/75">
+              <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-navy-950/75">
                 {brand.filingNote}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -420,7 +409,7 @@ export default async function HomePage({
             </div>
             <div className="lg:col-span-7">
               <LawyerCards />
-              <p className="mt-5 text-[12.5px] text-muted">{contact.lawyerNote}</p>
+              <p className="mt-5 text-[12.5px] text-slate-muted">{contact.lawyerNote}</p>
             </div>
           </div>
         </div>

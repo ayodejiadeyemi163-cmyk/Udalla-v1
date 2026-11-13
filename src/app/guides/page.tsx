@@ -33,7 +33,7 @@ export default async function GuidesPage({
         intro="Short explanations of the parts founders get stuck on: names, ownership, registered addresses and the deadlines that follow."
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Guides" }]} />
 
@@ -43,8 +43,8 @@ export default async function GuidesPage({
               aria-current={!active ? "page" : undefined}
               className={`rounded-full border px-4 py-2 text-[13px] ${
                 !active
-                  ? "border-forest bg-forest text-ivory"
-                  : "border-line text-ink/70 hover:border-ink/40"
+                  ? "border-navy-900 bg-navy-900 text-cream-100"
+                  : "border-cream-300 text-navy-950/70 hover:border-navy-950/40"
               }`}
             >
               All
@@ -56,8 +56,8 @@ export default async function GuidesPage({
                 aria-current={active === country.slug ? "page" : undefined}
                 className={`rounded-full border px-4 py-2 text-[13px] ${
                   active === country.slug
-                    ? "border-forest bg-forest text-ivory"
-                    : "border-line text-ink/70 hover:border-ink/40"
+                    ? "border-navy-900 bg-navy-900 text-cream-100"
+                    : "border-cream-300 text-navy-950/70 hover:border-navy-950/40"
                 }`}
               >
                 {country.name}
@@ -69,7 +69,7 @@ export default async function GuidesPage({
             {guides.length > 0 ? (
               <GuideCards guides={guides} />
             ) : (
-              <p className="text-[14px] text-ink/70">
+              <p className="text-[14px] text-navy-950/70">
                 No guides for this country yet. The full list is still available.
               </p>
             )}
@@ -78,15 +78,15 @@ export default async function GuidesPage({
           {guides.length > 3 ? (
             <div className="mt-10">
               <h2 className="font-display text-[22px] tracking-[-0.02em]">More reading</h2>
-              <ul className="mt-4 divide-y divide-line border-y border-line">
+              <ul className="mt-4 divide-y divide-cream-300 border-y border-cream-300">
                 {guides.slice(3).map((guide) => (
                   <li key={guide.slug}>
                     <Link
                       href={`/guides/${guide.slug}`}
-                      className="flex items-center justify-between gap-4 py-4 text-[14px] hover:text-forest"
+                      className="flex items-center justify-between gap-4 py-4 text-[14px] hover:text-navy-900"
                     >
                       {guide.title}
-                      <span className="mono text-[11.5px] text-muted">
+                      <span className="mono text-[11.5px] text-slate-muted">
                         {guide.readingMinutes} min
                       </span>
                     </Link>

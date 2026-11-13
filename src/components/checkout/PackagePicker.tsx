@@ -81,15 +81,15 @@ export function PackagePicker({
               onClick={() => setTier(entry.tier)}
               className={`rounded-[14px] border p-4 text-left transition ${
                 active
-                  ? "border-forest bg-forest/[0.05] shadow-soft"
-                  : "border-line hover:border-ink/30"
+                  ? "border-navy-900 bg-navy-900/[0.05] shadow-soft"
+                  : "border-cream-300 hover:border-navy-950/30"
               }`}
             >
               <span className="flex items-center justify-between gap-3">
                 <span className="flex items-center gap-2">
                   <span
                     className={`grid h-4 w-4 place-items-center rounded-full border ${
-                      active ? "border-forest bg-forest text-ivory" : "border-ink/25"
+                      active ? "border-navy-900 bg-navy-900 text-cream-100" : "border-navy-950/25"
                     }`}
                   >
                     {active ? <Check className="h-2.5 w-2.5" /> : null}
@@ -98,12 +98,12 @@ export function PackagePicker({
                     {entry.name}
                   </span>
                   {entry.badge ? (
-                    <span className="pill pill-marigold">{entry.badge}</span>
+                    <span className="pill pill-emerald">{entry.badge}</span>
                   ) : null}
                 </span>
                 <span className="mono text-[15px]">{formatMoney(entry.price, currency)}</span>
               </span>
-              <span className="mt-2 block pl-6 text-[12.5px] leading-relaxed text-ink/65">
+              <span className="mt-2 block pl-6 text-[12.5px] leading-relaxed text-navy-950/65">
                 {entry.features.slice(0, 3).join(" · ")}
               </span>
             </button>
@@ -114,7 +114,7 @@ export function PackagePicker({
       {addOns.length > 0 ? (
         <div className="mt-6">
           <p className="eyebrow">Add-ons</p>
-          <div className="mt-2 divide-y divide-line border-y border-line">
+          <div className="mt-2 divide-y divide-cream-300 border-y border-cream-300">
             {addOns.map((addOn) => {
               const active = selectedAddOns.includes(addOn.slug);
               return (
@@ -126,7 +126,7 @@ export function PackagePicker({
                     type="checkbox"
                     checked={active}
                     onChange={() => toggleAddOn(addOn.slug)}
-                    className="mt-0.5 h-4 w-4 flex-none accent-forest"
+                    className="mt-0.5 h-4 w-4 flex-none accent-navy-900"
                   />
                   <span className="flex-1">
                     <span className="flex items-center justify-between gap-3">
@@ -136,7 +136,7 @@ export function PackagePicker({
                         {addOn.billing === "yearly" ? " a year" : ""}
                       </span>
                     </span>
-                    <span className="mt-0.5 block text-[11.5px] text-muted">
+                    <span className="mt-0.5 block text-[11.5px] text-slate-muted">
                       {addOn.description}
                     </span>
                   </span>
@@ -150,20 +150,20 @@ export function PackagePicker({
       <div className="card mt-6 p-4">
         <dl className="space-y-1.5 text-[13px]">
           <div className="flex justify-between">
-            <dt className="text-ink/70">{selected?.name ?? "Package"}</dt>
+            <dt className="text-navy-950/70">{selected?.name ?? "Package"}</dt>
             <dd className="mono">{formatMoney(selected?.price ?? 0, currency)}</dd>
           </div>
           {addOnsTotal > 0 ? (
             <div className="flex justify-between">
-              <dt className="text-ink/70">Add-ons</dt>
+              <dt className="text-navy-950/70">Add-ons</dt>
               <dd className="mono">{formatMoney(addOnsTotal, currency)}</dd>
             </div>
           ) : null}
           <div className="flex justify-between">
-            <dt className="text-ink/70">{governmentFeeLabel}</dt>
+            <dt className="text-navy-950/70">{governmentFeeLabel}</dt>
             <dd className="mono">
               {governmentFeeWaived ? (
-                <span className="text-forest">Waived</span>
+                <span className="text-navy-900">Waived</span>
               ) : (
                 <>
                   {governmentFeeFrom ? "from " : ""}
@@ -172,7 +172,7 @@ export function PackagePicker({
               )}
             </dd>
           </div>
-          <div className="flex justify-between border-t border-line pt-2 text-[15px]">
+          <div className="flex justify-between border-t border-cream-300 pt-2 text-[15px]">
             <dt className="font-medium">Total today</dt>
             <dd className="mono text-[17px]" aria-live="polite">
               {formatMoney(total, currency)}
@@ -180,7 +180,7 @@ export function PackagePicker({
           </div>
         </dl>
         {governmentFeeWaived ? (
-          <p className="mt-2 text-[11.5px] text-forest">
+          <p className="mt-2 text-[11.5px] text-navy-900">
             Government fee waived for a limited time
           </p>
         ) : null}

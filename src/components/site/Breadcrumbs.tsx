@@ -7,11 +7,11 @@ export function Breadcrumbs({
 }) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex flex-wrap items-center gap-2 text-[11.5px] uppercase tracking-[0.12em] text-muted">
+      <ol className="flex flex-wrap items-center gap-2 text-[11.5px] uppercase tracking-[0.12em] text-slate-muted">
         {items.map((item, index) => (
           <li key={item.label} className="flex items-center gap-2">
             {item.href ? (
-              <Link href={item.href} className="hover:text-forest">
+              <Link href={item.href} className="hover:text-navy-900">
                 {item.label}
               </Link>
             ) : (

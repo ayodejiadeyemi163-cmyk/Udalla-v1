@@ -28,7 +28,7 @@ export default async function AdminLayout({
   const admin = await requireAdmin();
 
   return (
-    <div className="bg-paper">
+    <div className="bg-cream-50">
       <div className="wrap py-8 md:py-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -36,7 +36,7 @@ export default async function AdminLayout({
             <h1 className="display mt-2 text-[clamp(1.8rem,1.4rem+1.8vw,2.6rem)]">
               Operations panel
             </h1>
-            <p className="mt-1 text-[12.5px] text-muted">Signed in as {admin.email}</p>
+            <p className="mt-1 text-[12.5px] text-slate-muted">Signed in as {admin.email}</p>
           </div>
           <div className="flex items-center gap-2">
             <Link href="/dashboard" className="btn btn-outline h-10 px-4 text-[12.5px]">
@@ -50,12 +50,12 @@ export default async function AdminLayout({
           </div>
         </div>
 
-        <nav aria-label="Admin" className="mt-6 flex flex-wrap gap-1 border-y border-line py-2">
+        <nav aria-label="Admin" className="mt-6 flex flex-wrap gap-1 border-y border-cream-300 py-2">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-[13px] text-ink/70 hover:bg-ivory hover:text-ink"
+              className="rounded-full px-3.5 py-2 text-[13px] text-navy-950/70 hover:bg-cream-100 hover:text-navy-950"
             >
               {link.label}
             </Link>

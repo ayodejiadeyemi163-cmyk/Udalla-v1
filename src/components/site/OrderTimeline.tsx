@@ -25,15 +25,15 @@ export function OrderTimeline({
               <span
                 className={`mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full border text-[10px] ${
                   done
-                    ? "border-forest bg-forest text-ivory"
-                    : "border-line bg-paper text-ink/30"
+                    ? "border-navy-900 bg-navy-900 text-cream-100"
+                    : "border-cream-300 bg-cream-50 text-slate-muted"
                 }`}
               >
                 {done ? <Check className="h-3 w-3" /> : index + 1}
               </span>
               {index < ORDER_STATUS_FLOW.length - 1 ? (
                 <span
-                  className={`mt-1 w-px flex-1 ${done ? "bg-forest/35" : "bg-line"}`}
+                  className={`mt-1 w-px flex-1 ${done ? "bg-navy-900/35" : "bg-cream-300"}`}
                   aria-hidden="true"
                 />
               ) : null}
@@ -41,13 +41,13 @@ export function OrderTimeline({
             <div className="pb-2">
               <p
                 className={`text-[13.5px] ${
-                  active ? "font-medium text-ink" : done ? "text-ink/80" : "text-ink/40"
+                  active ? "font-medium text-navy-950" : done ? "text-navy-950/80" : "text-slate-muted"
                 }`}
               >
                 {step.label}
               </p>
               {entry ? (
-                <p className="mono mt-0.5 text-[11px] text-muted">
+                <p className="mono mt-0.5 text-[11px] text-slate-muted">
                   {new Date(entry.at).toLocaleDateString("en-GB", {
                     day: "2-digit",
                     month: "short",

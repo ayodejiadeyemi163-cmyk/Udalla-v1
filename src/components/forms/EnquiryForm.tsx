@@ -29,11 +29,11 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
   if (state.ok) {
     return (
       <div className="card p-8 text-center">
-        <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-forest text-ivory">
+        <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-navy-900 text-cream-100">
           <Check className="h-5 w-5" />
         </span>
         <p className="mt-5 font-display text-[24px] tracking-[-0.02em]">Enquiry received</p>
-        <p className="mt-2 text-[14px] text-ink/70">{state.message}</p>
+        <p className="mt-2 text-[14px] text-navy-950/70">{state.message}</p>
       </div>
     );
   }
@@ -46,14 +46,14 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
             Name
           </label>
           <input id="name" name="name" className="field" autoComplete="name" required />
-          {state.errors.name ? <p className="mt-1 text-[12px] text-clay">{state.errors.name}</p> : null}
+          {state.errors.name ? <p className="mt-1 text-[12px] text-danger-600">{state.errors.name}</p> : null}
         </div>
         <div>
           <label className="label" htmlFor="email">
             Email
           </label>
           <input id="email" name="email" type="email" className="field" autoComplete="email" required />
-          {state.errors.email ? <p className="mt-1 text-[12px] text-clay">{state.errors.email}</p> : null}
+          {state.errors.email ? <p className="mt-1 text-[12px] text-danger-600">{state.errors.email}</p> : null}
         </div>
         <div>
           <label className="label" htmlFor="whatsapp">
@@ -61,7 +61,7 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
           </label>
           <input id="whatsapp" name="whatsapp" className="field" autoComplete="tel" required />
           {state.errors.whatsapp ? (
-            <p className="mt-1 text-[12px] text-clay">{state.errors.whatsapp}</p>
+            <p className="mt-1 text-[12px] text-danger-600">{state.errors.whatsapp}</p>
           ) : null}
         </div>
         <div>
@@ -70,7 +70,7 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
           </label>
           <input id="business" name="business" className="field" required />
           {state.errors.business ? (
-            <p className="mt-1 text-[12px] text-clay">{state.errors.business}</p>
+            <p className="mt-1 text-[12px] text-danger-600">{state.errors.business}</p>
           ) : null}
         </div>
         <div>
@@ -111,11 +111,11 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
         </div>
       </div>
 
-      <label className="flex items-start gap-3 text-[12.5px] leading-relaxed text-ink/75">
+      <label className="flex items-start gap-3 text-[12.5px] leading-relaxed text-navy-950/75">
         <input
           type="checkbox"
           name="consent"
-          className="mt-0.5 h-4 w-4 flex-none accent-forest"
+          className="mt-0.5 h-4 w-4 flex-none accent-navy-900"
           required
         />
         <span>
@@ -124,11 +124,11 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
         </span>
       </label>
       {state.errors.consent ? (
-        <p className="text-[12px] text-clay">{state.errors.consent}</p>
+        <p className="text-[12px] text-danger-600">{state.errors.consent}</p>
       ) : null}
 
       {state.message && !state.ok ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">
           {state.message}
         </p>
       ) : null}
@@ -137,7 +137,7 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
         <button type="submit" className="btn btn-primary" disabled={pending}>
           {pending ? "Sending" : "Send enquiry"}
         </button>
-        <p className="text-[11.5px] text-muted">We reply within 24 hours, Monday to Saturday.</p>
+        <p className="text-[11.5px] text-slate-muted">We reply within 24 hours, Monday to Saturday.</p>
       </div>
     </form>
   );

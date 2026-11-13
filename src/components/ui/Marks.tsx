@@ -144,7 +144,7 @@ export function SectionHeading({
       <div className="max-w-2xl">
         {eyebrow ? <p className="eyebrow mb-4">{eyebrow}</p> : null}
         <h2 className="display text-[clamp(2rem,1.5rem+2.2vw,3.4rem)]">{title}</h2>
-        {intro ? <p className="mt-4 text-[17px] leading-relaxed text-ink/75">{intro}</p> : null}
+        {intro ? <p className="mt-4 text-[17px] leading-relaxed text-navy-950/75">{intro}</p> : null}
       </div>
       {action ? <div className="flex-none">{action}</div> : null}
     </div>

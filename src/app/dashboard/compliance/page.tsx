@@ -23,7 +23,7 @@ export default async function ComplianceDashboardPage() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="font-display text-[24px] tracking-[-0.02em]">Compliance</h2>
-          <p className="mt-1 text-[13px] text-muted">
+          <p className="mt-1 text-[13px] text-slate-muted">
             Requests, filing status and the dates that matter.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default async function ComplianceDashboardPage() {
         {matters.length === 0 ? (
           <div className="card p-9 text-center">
             <p className="font-display text-[21px] tracking-[-0.02em]">No requests yet</p>
-            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-ink/65">
+            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-navy-950/65">
               Ask for annual returns, a tax ID or a beneficial ownership filing. A partner
               lawyer picks up the matter and replies in your dashboard.
             </p>
@@ -57,17 +57,17 @@ export default async function ComplianceDashboardPage() {
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <p className="mono text-[11.5px] text-muted">{matter.reference}</p>
+                      <p className="mono text-[11.5px] text-slate-muted">{matter.reference}</p>
                       <p className="mt-1 font-display text-[19px] tracking-[-0.02em]">
                         {matter.serviceName}
                       </p>
-                      <p className="mt-0.5 text-[12px] text-muted">
+                      <p className="mt-0.5 text-[12px] text-slate-muted">
                         {thread ? `${thread.status.replace("-", " ")} · ${new Date(thread.at).toLocaleDateString("en-GB")}` : "Received"}
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
                       <MatterStatusBadge status={matter.status} />
-                      <ArrowRight className="text-forest" />
+                      <ArrowRight className="text-navy-900" />
                     </div>
                   </div>
                 </Link>
@@ -80,7 +80,7 @@ export default async function ComplianceDashboardPage() {
       <section className="mt-8">
         <h3 className="eyebrow mb-3">Deadlines and reminders</h3>
         {deadlines.length === 0 ? (
-          <p className="text-[13px] text-muted">
+          <p className="text-[13px] text-slate-muted">
             Nothing scheduled. Deadlines are added when an entity is registered or a yearly
             service is invoiced.
           </p>
@@ -88,23 +88,23 @@ export default async function ComplianceDashboardPage() {
           <div className="card overflow-hidden">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-line">
-                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-muted">
+                <tr className="border-b border-cream-300">
+                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-slate-muted">
                     Filing
                   </th>
-                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-muted">
+                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-slate-muted">
                     Due
                   </th>
-                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-muted">
+                  <th className="px-4 py-3 text-[10.5px] uppercase tracking-[0.12em] text-slate-muted">
                     Reminders
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {deadlines.map((deadline) => (
-                  <tr key={deadline.id} className="border-b border-line last:border-0">
+                  <tr key={deadline.id} className="border-b border-cream-300 last:border-0">
                     <td className="px-4 py-3 text-[13px]">
-                      <Link href={deadline.href} className="hover:text-forest">
+                      <Link href={deadline.href} className="hover:text-navy-900">
                         {deadline.label}
                       </Link>
                     </td>
@@ -112,13 +112,13 @@ export default async function ComplianceDashboardPage() {
                       {deadline.date}
                       <span
                         className={`ml-2 text-[10.5px] ${
-                          deadline.tone === "soon" ? "text-clay" : "text-muted"
+                          deadline.tone === "soon" ? "text-danger-600" : "text-slate-muted"
                         }`}
                       >
                         {daysUntil(deadline.date)}d
                       </span>
                     </td>
-                    <td className="mono px-4 py-3 text-[11.5px] text-muted">
+                    <td className="mono px-4 py-3 text-[11.5px] text-slate-muted">
                       {deadline.reminders.join(" · ")}
                     </td>
                   </tr>
@@ -127,7 +127,7 @@ export default async function ComplianceDashboardPage() {
             </table>
           </div>
         )}
-        <p className="mt-3 text-[11.5px] text-muted">
+        <p className="mt-3 text-[11.5px] text-slate-muted">
           Reminders are emailed 30 and 7 days before each deadline. Yearly services are
           invoiced, never charged automatically.
         </p>

@@ -44,37 +44,37 @@ export default async function LoginPage({
   if (user) redirect(next);
 
   return (
-    <section className="bg-paper">
+    <section className="bg-cream-50">
       <div className="wrap grid min-h-[78vh] gap-0 py-10 md:py-16 lg:grid-cols-12">
-        <div className="relative hidden overflow-hidden rounded-l-[18px] bg-forest p-10 text-ivory lg:col-span-5 lg:block">
+        <div className="relative hidden overflow-hidden rounded-l-[18px] bg-navy-900 p-10 text-cream-100 lg:col-span-5 lg:block">
           <div className="grid-hairlines absolute inset-0 opacity-10" aria-hidden="true" />
           <div className="relative flex h-full flex-col justify-between">
             <Link href="/" className="font-display text-[28px] tracking-[-0.045em]">
               {brand.name}
             </Link>
             <div>
-              <p className="eyebrow text-ivory/60">Your dashboard</p>
+              <p className="eyebrow text-cream-100/60">Your dashboard</p>
               <p className="mt-4 font-display text-[clamp(2rem,1.6rem+1.4vw,2.8rem)] leading-[1.02] tracking-[-0.03em]">
                 Every filing, deadline and document in one place.
               </p>
-              <p className="mt-5 max-w-sm text-[13.5px] leading-relaxed text-ivory/65">
+              <p className="mt-5 max-w-sm text-[13.5px] leading-relaxed text-cream-100/65">
                 {brand.filingNote}
               </p>
             </div>
-            <p className="mono text-[11px] uppercase tracking-[0.14em] text-ivory/45">
+            <p className="mono text-[11px] uppercase tracking-[0.14em] text-cream-100/45">
               {brand.legalName}
             </p>
           </div>
         </div>
 
-        <div className="rounded-[18px] border border-line bg-ivory p-6 md:p-10 lg:col-span-7 lg:rounded-l-none">
+        <div className="rounded-[18px] border border-cream-300 bg-cream-100 p-6 md:p-10 lg:col-span-7 lg:rounded-l-none">
           <p className="eyebrow">Log in</p>
           <h1 className="display mt-3 text-[clamp(2rem,1.6rem+1.6vw,3rem)]">
             Sign in, no password to remember.
           </h1>
 
           {params.error ? (
-            <p className="mt-5 rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">
+            <p className="mt-5 rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">
               {params.error}
             </p>
           ) : null}
@@ -93,28 +93,28 @@ export default async function LoginPage({
               Continue with Google
             </button>
             {!hasSupabaseConfig() ? (
-              <p className="mt-2 text-[11.5px] text-muted">
+              <p className="mt-2 text-[11.5px] text-slate-muted">
                 Google sign in needs Supabase keys. The demo accounts below work now.
               </p>
             ) : null}
           </form>
 
           <div className="my-7 flex items-center gap-3">
-            <span className="h-px flex-1 bg-line" />
-            <span className="mono text-[10.5px] uppercase tracking-[0.14em] text-muted">or</span>
-            <span className="h-px flex-1 bg-line" />
+            <span className="h-px flex-1 bg-cream-300" />
+            <span className="mono text-[10.5px] uppercase tracking-[0.14em] text-slate-muted">or</span>
+            <span className="h-px flex-1 bg-cream-300" />
           </div>
 
           <h2 className="text-[14px] font-medium">Email magic link</h2>
           <MagicLinkForm disabled={!hasSupabaseConfig()} />
 
           {isDemoMode() ? (
-            <div className="mt-8 border-t border-line pt-6">
+            <div className="mt-8 border-t border-cream-300 pt-6">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="text-[14px] font-medium">Demo accounts</h2>
-                <span className="pill pill-marigold">Preview</span>
+                <span className="pill pill-emerald">Preview</span>
               </div>
-              <p className="mt-1 text-[12px] text-muted">
+              <p className="mt-1 text-[12px] text-slate-muted">
                 These sign in instantly and read the demo store. No real data is created.
               </p>
               <div className="mt-4 grid gap-2">
@@ -124,15 +124,15 @@ export default async function LoginPage({
                     <input type="hidden" name="next" value={next} />
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-between gap-4 rounded-[12px] border border-line bg-white/60 px-4 py-3 text-left transition hover:border-forest/50"
+                      className="flex w-full items-center justify-between gap-4 rounded-[12px] border border-cream-300 bg-white/60 px-4 py-3 text-left transition hover:border-navy-900/50"
                     >
                       <span>
                         <span className="block text-[13.5px] font-medium">{account.label}</span>
-                        <span className="mt-0.5 block text-[11.5px] text-muted">
+                        <span className="mt-0.5 block text-[11.5px] text-slate-muted">
                           {account.detail}
                         </span>
                       </span>
-                      <span aria-hidden="true" className="text-forest">
+                      <span aria-hidden="true" className="text-navy-900">
                         &rarr;
                       </span>
                     </button>
@@ -142,7 +142,7 @@ export default async function LoginPage({
             </div>
           ) : null}
 
-          <p className="mt-8 text-[11.5px] leading-relaxed text-muted">
+          <p className="mt-8 text-[11.5px] leading-relaxed text-slate-muted">
             By signing in you agree to the{" "}
             <Link href="/terms" className="link-quiet">
               terms

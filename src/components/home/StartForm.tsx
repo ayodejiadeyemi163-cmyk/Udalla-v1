@@ -25,7 +25,7 @@ export function StartForm({ countries }: { countries: StartFormCountry[] }) {
               name="country"
               value={countrySlug}
               onChange={(event) => setCountrySlug(event.target.value)}
-              className="field border-transparent bg-ivory/70 focus:bg-white"
+              className="field border-transparent bg-cream-100/70 focus:bg-white"
             >
               {countries.map((entry) => (
                 <option key={entry.slug} value={entry.slug}>
@@ -38,7 +38,7 @@ export function StartForm({ countries }: { countries: StartFormCountry[] }) {
             <span className="sr-only">Business type</span>
             <select
               name="service"
-              className="field border-transparent bg-ivory/70 focus:bg-white"
+              className="field border-transparent bg-cream-100/70 focus:bg-white"
               defaultValue={country?.services[0]?.slug}
               key={countrySlug}
             >
@@ -58,12 +58,6 @@ export function StartForm({ countries }: { countries: StartFormCountry[] }) {
           </button>
         </div>
       </div>
-      <noscript>
-        <p className="mt-2 text-[12.5px] text-muted">
-          Choose the country first, then the business type. Both lists are grouped by country
-          above.
-        </p>
-      </noscript>
     </form>
   );
 }

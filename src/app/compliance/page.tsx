@@ -30,7 +30,7 @@ export default async function CompliancePage() {
         intro="Every filing has a date and a consequence. We track the dates, remind you 30 and 7 days before, and handle the filing when you approve it."
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Compliance" }]} />
 
@@ -52,7 +52,7 @@ export default async function CompliancePage() {
               <div key={item.title} className="card p-6">
                 <p className="numeral text-[34px]">{String(index + 1).padStart(2, "0")}</p>
                 <h2 className="mt-3 font-display text-[20px] tracking-[-0.02em]">{item.title}</h2>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-ink/70">{item.body}</p>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-navy-950/70">{item.body}</p>
               </div>
             ))}
           </div>
@@ -66,7 +66,7 @@ export default async function CompliancePage() {
               return (
                 <div key={country.slug}>
                   <div className="mb-3 flex items-center gap-2">
-                    <CountryMark mark={country.mark} className="h-4 w-4 text-forest" />
+                    <CountryMark mark={country.mark} className="h-4 w-4 text-navy-900" />
                     <h2 className="font-display text-[23px] tracking-[-0.03em]">{country.name}</h2>
                   </div>
                   <div className="grid gap-3 md:grid-cols-2">
@@ -78,7 +78,7 @@ export default async function CompliancePage() {
                       >
                         <div>
                           <p className="text-[15px] font-medium">{service.name}</p>
-                          <p className="mt-1 text-[13px] leading-relaxed text-ink/65">
+                          <p className="mt-1 text-[13px] leading-relaxed text-navy-950/65">
                             {service.summary}
                           </p>
                           {service.billing === "yearly" ? (
@@ -92,9 +92,9 @@ export default async function CompliancePage() {
                               : formatMoney(service.price, service.currency)}
                           </p>
                           {service.billing === "yearly" ? (
-                            <p className="text-[11px] text-muted">a year</p>
+                            <p className="text-[11px] text-slate-muted">a year</p>
                           ) : null}
-                          <ArrowRight className="ml-auto mt-3 text-forest transition group-hover:translate-x-0.5" />
+                          <ArrowRight className="ml-auto mt-3 text-navy-900 transition group-hover:translate-x-0.5" />
                         </div>
                       </Link>
                     ))}
@@ -104,21 +104,21 @@ export default async function CompliancePage() {
             })}
           </div>
 
-          <div className="mt-14 grid gap-10 border-t border-line pt-10 lg:grid-cols-12">
+          <div className="mt-14 grid gap-10 border-t border-cream-300 pt-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow">Partner lawyers</p>
               <h2 className="display mt-3 text-[clamp(2rem,1.5rem+2vw,3.2rem)]">
                 {brand.lawyerSectionTitle}
               </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-ink/75">{brand.filingNote}</p>
-              <p className="mt-4 text-[13px] leading-relaxed text-muted">
+              <p className="mt-4 text-[15px] leading-relaxed text-navy-950/75">{brand.filingNote}</p>
+              <p className="mt-4 text-[13px] leading-relaxed text-slate-muted">
                 Compliance requests create a matter, assigned to a partner lawyer in that
                 jurisdiction. You follow the timeline and message them from your dashboard.
               </p>
             </div>
             <div className="lg:col-span-7">
               <LawyerCards />
-              <p className="mt-5 text-[12.5px] text-muted">{contact.lawyerNote}</p>
+              <p className="mt-5 text-[12.5px] text-slate-muted">{contact.lawyerNote}</p>
             </div>
           </div>
         </div>

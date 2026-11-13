@@ -11,7 +11,7 @@ export function StepIndicator({
   furthest: number;
 }) {
   return (
-    <nav aria-label="Order steps" className="border-y border-line">
+    <nav aria-label="Order steps" className="border-y border-cream-300">
       <ol className="flex gap-1 overflow-x-auto py-2">
         {ORDER_STEPS.map((step) => {
           const active = step.step === current;
@@ -22,17 +22,17 @@ export function StepIndicator({
               <span
                 className={`mono grid h-6 w-6 flex-none place-items-center rounded-full border text-[10.5px] ${
                   active
-                    ? "border-forest bg-forest text-ivory"
+                    ? "border-navy-900 bg-navy-900 text-cream-100"
                     : done
-                      ? "border-forest/40 bg-forest/10 text-forest"
-                      : "border-line text-ink/40"
+                      ? "border-navy-900/40 bg-navy-900/10 text-navy-900"
+                      : "border-cream-300 text-slate-muted"
                 }`}
               >
                 {step.step}
               </span>
               <span
                 className={`whitespace-nowrap text-[12.5px] ${
-                  active ? "text-ink" : "text-ink/55"
+                  active ? "text-navy-950" : "text-slate-muted"
                 }`}
               >
                 {step.label}
@@ -45,7 +45,7 @@ export function StepIndicator({
               {reachable && !active ? (
                 <Link
                   href={`${basePath}?step=${step.step}`}
-                  className="flex items-center gap-2 rounded-full px-2 py-1.5 hover:bg-ivory"
+                  className="flex items-center gap-2 rounded-full px-2 py-1.5 hover:bg-cream-100"
                 >
                   {content}
                 </Link>

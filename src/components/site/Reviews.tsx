@@ -10,7 +10,7 @@ export async function Reviews() {
   if (reviews.length === 0) return null;
 
   return (
-    <section className="border-t border-line bg-paper py-16">
+    <section className="border-t border-cream-300 bg-cream-50 py-16">
       <div className="wrap">
         <p className="eyebrow mb-6">In their words</p>
         <div className="grid gap-6 md:grid-cols-3">
@@ -19,7 +19,7 @@ export async function Reviews() {
               <blockquote className="font-display text-[18px] leading-snug tracking-[-0.01em]">
                 {review.body}
               </blockquote>
-              <figcaption className="mt-4 text-[12px] uppercase tracking-[0.12em] text-muted">
+              <figcaption className="mt-4 text-[12px] uppercase tracking-[0.12em] text-slate-muted">
                 {review.name}, {review.country}
               </figcaption>
             </figure>

@@ -63,12 +63,12 @@ export default async function GuidePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <PageHero eyebrow="Guide" title={guide.title} intro={guide.excerpt}>
-        <p className="mono mt-6 text-[11.5px] uppercase tracking-[0.12em] text-muted">
+        <p className="mono mt-6 text-[11.5px] uppercase tracking-[0.12em] text-slate-muted">
           {guide.readingMinutes} min read · {guide.publishedAt}
         </p>
       </PageHero>
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs
             items={[
@@ -86,9 +86,9 @@ export default async function GuidePage({
                   <p key={block.slice(0, 48)}>{block}</p>
                 ),
               )}
-              <div className="mt-10 rounded-[14px] border border-line bg-ivory/60 p-5 text-[13px] leading-relaxed">
+              <div className="mt-10 rounded-[14px] border border-cream-300 bg-cream-100/60 p-5 text-[13px] leading-relaxed">
                 <p className="eyebrow mb-2">A note on this guide</p>
-                <p className="text-ink/70">
+                <p className="text-navy-950/70">
                   General information, not legal advice. Registry rules change. Your order
                   total and the checklist in your dashboard are the figures that apply.
                 </p>
@@ -102,7 +102,7 @@ export default async function GuidePage({
                   <p className="mt-2 font-display text-[21px] leading-tight tracking-[-0.02em]">
                     Start with a country and a structure
                   </p>
-                  <p className="mt-2 text-[13px] leading-relaxed text-ink/70">
+                  <p className="mt-2 text-[13px] leading-relaxed text-navy-950/70">
                     Prices are shown up front, government fees at cost.
                   </p>
                   <Link href="/services" className="btn btn-primary mt-4 w-full">
@@ -121,7 +121,7 @@ export default async function GuidePage({
                         <li key={entry.slug}>
                           <Link
                             href={`/guides/${entry.slug}`}
-                            className="card block p-4 text-[13.5px] leading-snug hover:border-ink/30"
+                            className="card block p-4 text-[13.5px] leading-snug hover:border-navy-950/30"
                           >
                             {entry.title}
                           </Link>

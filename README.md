@@ -5,7 +5,6 @@ Business registration and compliance for founders in Nigeria, the United Kingdom
 - Brand: Udalla
 - Legal name: Udalla Global Concepts (confirm the legal ending with the owner)
 - Domain: udalla.org
-- Live preview: https://site-47eca64bf48843c49e8be2cdd3730edc.freebuff.page
 
 Brand name, legal name, domain and contact details live in one file: `src/config/brand.ts`.
 
@@ -156,7 +155,7 @@ Every admin change writes a row to `price_changes`. The admin pricing page shows
 - Security headers (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy) are set in `next.config.ts`.
 - Audit entries are append only and shown in the admin outbox.
 
-## Still missing before real customer documents are accepted
+## Known gaps
 
 These are deliberate, and listed so nobody assumes otherwise:
 
@@ -168,11 +167,3 @@ These are deliberate, and listed so nobody assumes otherwise:
 6. Uptime monitoring and error tracking.
 7. A signed engagement letter flow for partner lawyers.
 8. Lighthouse run on a real device profile, which was not executed here.
-
-## Deployment notes for this build
-
-- This environment had no GitHub credentials and no Vercel token, so the repository could not be pushed and Vercel could not be used. The app is deployed on Freebuff Sites (Cloudflare Workers through OpenNext) at the preview URL above, with `DEMO_MODE=true` and a generated `SESSION_SECRET`.
-- Commits use the identity `EO Isama <eoisama@gmail.com>` as requested. Change it with `git config user.name` and `git config user.email` if that is not the preferred name.
-- The legal ending of `Udalla Global Concepts` is a placeholder pending confirmation from the owner.
-- UK confirmation statement and US annual report prices were not supplied, so they are shown as "By quote" until an admin sets an amount.
-- The `NEXT_PUBLIC_SITE_URL` default is https://udalla.org. On the Cloudflare preview the canonical origin therefore points at the intended domain rather than the preview host.

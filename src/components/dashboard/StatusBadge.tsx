@@ -1,12 +1,12 @@
 import { orderStatusLabel, type MatterStatus, type OrderStatus } from "@/lib/store/types";
 
 const orderTone: Record<OrderStatus, string> = {
-  received: "pill-forest",
-  "in-review": "pill-forest",
-  "name-check": "pill-marigold",
-  filed: "pill-marigold",
+  received: "pill-emerald-soft",
+  "in-review": "pill-emerald-soft",
+  "name-check": "pill-emerald",
+  filed: "pill-emerald",
   "awaiting-registry": "pill",
-  completed: "pill-forest",
+  completed: "pill-emerald-soft",
 };
 
 export function OrderStatusBadge({ status }: { status: OrderStatus }) {
@@ -22,5 +22,5 @@ const matterLabels: Record<MatterStatus, string> = {
 };
 
 export function MatterStatusBadge({ status }: { status: MatterStatus }) {
-  return <span className="pill pill-forest">{matterLabels[status]}</span>;
+  return <span className="pill pill-emerald-soft">{matterLabels[status]}</span>;
 }

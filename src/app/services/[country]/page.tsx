@@ -57,8 +57,8 @@ export default async function CountryServicesPage({
               aria-current={other.slug === country ? "page" : undefined}
               className={`rounded-full border px-4 py-2 text-[13px] transition ${
                 other.slug === country
-                  ? "border-forest bg-forest text-ivory"
-                  : "border-line bg-paper text-ink/70 hover:border-ink/40"
+                  ? "border-navy-900 bg-navy-900 text-cream-100"
+                  : "border-cream-300 bg-cream-50 text-navy-950/70 hover:border-navy-950/40"
               }`}
             >
               {other.name}
@@ -67,7 +67,7 @@ export default async function CountryServicesPage({
         </div>
       </PageHero>
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs
             items={[
@@ -85,38 +85,38 @@ export default async function CountryServicesPage({
               >
                 <div className="md:col-span-7">
                   <div className="flex items-center gap-2">
-                    <CountryMark mark={entry.mark} className="h-5 w-5 text-forest" />
+                    <CountryMark mark={entry.mark} className="h-5 w-5 text-navy-900" />
                     <span className="eyebrow">{service.entityLabel}</span>
                   </div>
                   <h2 className="mt-3 font-display text-[clamp(1.6rem,1.3rem+1.2vw,2.2rem)] tracking-[-0.03em]">
-                    <Link href={`/services/${country}/${service.slug}`} className="hover:text-forest">
+                    <Link href={`/services/${country}/${service.slug}`} className="hover:text-navy-900">
                       {service.name}
                     </Link>
                   </h2>
-                  <p className="mt-3 max-w-xl text-[14.5px] leading-relaxed text-ink/70">
+                  <p className="mt-3 max-w-xl text-[14.5px] leading-relaxed text-navy-950/70">
                     {service.description}
                   </p>
                   <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                     {service.includes.map((item) => (
-                      <li key={item} className="flex gap-2 text-[13px] text-ink/75">
-                        <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-forest" />
+                      <li key={item} className="flex gap-2 text-[13px] text-navy-950/75">
+                        <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-navy-900" />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="md:col-span-5 md:border-l md:border-line md:pl-6">
+                <div className="md:col-span-5 md:border-l md:border-cream-300 md:pl-6">
                   <p className="eyebrow">Packages from</p>
                   <p className="mono mt-1 text-[32px] leading-none tracking-[-0.04em]">
                     {formatMoney(service.packages[0]?.price ?? 0, service.currency)}
                   </p>
-                  <p className="mt-2 text-[12.5px] text-muted">
+                  <p className="mt-2 text-[12.5px] text-slate-muted">
                     Government fee {service.governmentFeeWaived ? "waived" : "at cost"}{" "}
                     {service.governmentFeeWaived
                       ? ""
                       : `${service.governmentFeeFrom ? "from " : ""}${formatMoney(service.governmentFee, service.currency)}`}
                   </p>
-                  <p className="mt-3 text-[12px] text-muted">{service.processing}</p>
+                  <p className="mt-3 text-[12px] text-slate-muted">{service.processing}</p>
                   <Link
                     href={`/services/${country}/${service.slug}`}
                     className="btn btn-primary mt-5 w-full"
@@ -139,10 +139,10 @@ export default async function CountryServicesPage({
                   <li key={service.slug}>
                     <Link
                       href={`/compliance/${service.slug}`}
-                      className="flex items-center justify-between rounded-[12px] border border-line bg-ivory/60 px-4 py-3 text-[13.5px] hover:border-ink/30"
+                      className="flex items-center justify-between rounded-[12px] border border-cream-300 bg-cream-100/60 px-4 py-3 text-[13.5px] hover:border-navy-950/30"
                     >
                       <span>{service.name}</span>
-                      <span className="mono text-[12px] text-muted">
+                      <span className="mono text-[12px] text-slate-muted">
                         {service.quote || service.price === null
                           ? "By quote"
                           : `${formatMoney(service.price, service.currency)}${service.billing === "yearly" ? " a year" : ""}`}
@@ -154,7 +154,7 @@ export default async function CountryServicesPage({
             </div>
           ) : null}
 
-          <p className="mt-10 max-w-3xl text-[12px] text-muted">{priceNote}</p>
+          <p className="mt-10 max-w-3xl text-[12px] text-slate-muted">{priceNote}</p>
         </div>
       </section>
 

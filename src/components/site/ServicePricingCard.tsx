@@ -35,14 +35,14 @@ export function ServicePricingCard({
               onClick={() => setTier(entry.tier)}
               className={`flex items-center justify-between gap-2 rounded-[10px] border px-3 py-2.5 text-left transition ${
                 active
-                  ? "border-forest bg-forest/[0.06]"
-                  : "border-line hover:border-ink/30"
+                  ? "border-navy-900 bg-navy-900/[0.06]"
+                  : "border-cream-300 hover:border-navy-950/30"
               }`}
             >
               <span className="flex items-center gap-2">
                 <span
                   className={`grid h-4 w-4 place-items-center rounded-full border ${
-                    active ? "border-forest bg-forest text-ivory" : "border-ink/25"
+                    active ? "border-navy-900 bg-navy-900 text-cream-100" : "border-navy-950/25"
                   }`}
                 >
                   {active ? <Check className="h-2.5 w-2.5" /> : null}
@@ -60,16 +60,16 @@ export function ServicePricingCard({
         })}
       </div>
 
-      <dl className="mt-5 space-y-2 border-t border-line pt-4 text-[13px]">
+      <dl className="mt-5 space-y-2 border-t border-cream-300 pt-4 text-[13px]">
         <div className="flex items-center justify-between">
-          <dt className="text-ink/70">{selected?.name ?? "Package"} service fee</dt>
+          <dt className="text-navy-950/70">{selected?.name ?? "Package"} service fee</dt>
           <dd className="mono">{formatMoney(selected?.price ?? 0, service.currency)}</dd>
         </div>
         <div className="flex items-center justify-between">
-          <dt className="text-ink/70">{service.governmentFeeLabel}</dt>
+          <dt className="text-navy-950/70">{service.governmentFeeLabel}</dt>
           <dd className="mono">
             {service.governmentFeeWaived ? (
-              <span className="text-forest">Waived</span>
+              <span className="text-navy-900">Waived</span>
             ) : (
               <>
                 {service.governmentFeeFrom ? "from " : ""}
@@ -78,18 +78,18 @@ export function ServicePricingCard({
             )}
           </dd>
         </div>
-        <div className="flex items-center justify-between border-t border-line pt-3 text-[15px]">
+        <div className="flex items-center justify-between border-t border-cream-300 pt-3 text-[15px]">
           <dt className="font-medium">Total</dt>
           <dd className="mono text-[18px]">{formatMoney(total, service.currency)}</dd>
         </div>
       </dl>
 
       {service.governmentFeeWaived ? (
-        <p className="mt-3 rounded-[10px] bg-forest/[0.06] px-3 py-2 text-[11.5px] text-forest">
+        <p className="mt-3 rounded-[10px] bg-navy-900/[0.06] px-3 py-2 text-[11.5px] text-navy-900">
           Government fee waived for a limited time
         </p>
       ) : (
-        <p className="mt-3 text-[11px] leading-relaxed text-muted">
+        <p className="mt-3 text-[11px] leading-relaxed text-slate-muted">
           Government fee shown at cost.{" "}
           {service.governmentFeeFrom
             ? "The exact amount is confirmed before submission."
@@ -103,7 +103,7 @@ export function ServicePricingCard({
       >
         Get started
       </Link>
-      <p className="mt-3 text-[11px] leading-relaxed text-muted">{priceNote}</p>
+      <p className="mt-3 text-[11px] leading-relaxed text-slate-muted">{priceNote}</p>
     </div>
   );
 }

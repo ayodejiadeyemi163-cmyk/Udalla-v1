@@ -7,12 +7,12 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
   return (
     <>
       <PageHero eyebrow="Legal" title={doc.title} intro={doc.intro}>
-        <p className="mono mt-6 text-[11.5px] uppercase tracking-[0.12em] text-muted">
+        <p className="mono mt-6 text-[11.5px] uppercase tracking-[0.12em] text-slate-muted">
           Last updated {doc.updated}
         </p>
       </PageHero>
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: doc.title }]} />
           <div className="grid gap-10 lg:grid-cols-12">
@@ -24,14 +24,14 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
                     <li key={section.heading}>
                       <a
                         href={`#section-${index + 1}`}
-                        className="text-[12.5px] leading-snug text-ink/65 hover:text-forest"
+                        className="text-[12.5px] leading-snug text-navy-950/65 hover:text-navy-900"
                       >
                         {section.heading}
                       </a>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 border-t border-line pt-4">
+                <div className="mt-6 border-t border-cream-300 pt-4">
                   <p className="eyebrow mb-2">Other policies</p>
                   <ul className="space-y-1.5">
                     {[
@@ -44,7 +44,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
                       .filter((entry) => entry.href !== `/${doc.slug}`)
                       .map((entry) => (
                         <li key={entry.href}>
-                          <Link href={entry.href} className="text-[12.5px] text-forest hover:underline">
+                          <Link href={entry.href} className="text-[12.5px] text-navy-900 hover:underline">
                             {entry.label}
                           </Link>
                         </li>

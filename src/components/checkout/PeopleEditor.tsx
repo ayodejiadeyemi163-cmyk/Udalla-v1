@@ -143,7 +143,7 @@ export function PeopleEditor({
               <button
                 type="button"
                 onClick={() => remove(person.id)}
-                className="mt-3 text-[12px] text-clay hover:underline"
+                className="mt-3 text-[12px] text-danger-600 hover:underline"
               >
                 Remove this person
               </button>
@@ -156,13 +156,13 @@ export function PeopleEditor({
         <button
           type="button"
           onClick={() => setPeople((current) => [...current, blankPerson()])}
-          className="inline-flex items-center gap-2 text-[13px] font-medium text-forest hover:underline"
+          className="inline-flex items-center gap-2 text-[13px] font-medium text-navy-900 hover:underline"
         >
           <Plus /> Add another person
         </button>
         <p
           className={`text-[12.5px] ${
-            needsOwnership && total !== 100 ? "text-clay" : "text-muted"
+            needsOwnership && total !== 100 ? "text-danger-600" : "text-slate-muted"
           }`}
           aria-live="polite"
         >
@@ -171,7 +171,7 @@ export function PeopleEditor({
         </p>
       </div>
 
-      <p className="mt-4 text-[12px] leading-relaxed text-muted">
+      <p className="mt-4 text-[12px] leading-relaxed text-slate-muted">
         Add every {entityLabel === "LLC" ? "member" : "director and shareholder"} required for
         this filing. Ownership across shareholders or members must total 100 percent.
       </p>

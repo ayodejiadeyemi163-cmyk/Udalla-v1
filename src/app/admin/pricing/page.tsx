@@ -16,15 +16,15 @@ export default async function AdminPricingPage({
   return (
     <div className="space-y-8">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">
           Saved. Every page now reads the new figure.
         </p>
       ) : null}
 
-      <p className="max-w-3xl text-[12.5px] leading-relaxed text-muted">
+      <p className="max-w-3xl text-[12.5px] leading-relaxed text-slate-muted">
         Prices here override the values in the pricing config. Every change is written to the
         price history below and every page, card, FAQ and checkout reads the override.
       </p>
@@ -35,12 +35,12 @@ export default async function AdminPricingPage({
           <div key={service.slug} className="card p-5">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
-                <p className="mono text-[11px] text-muted">
+                <p className="mono text-[11px] text-slate-muted">
                   {service.country} · {service.slug}
                 </p>
                 <p className="font-display text-[19px] tracking-[-0.02em]">{service.name}</p>
               </div>
-              <p className="mono text-[11.5px] text-muted">
+              <p className="mono text-[11.5px] text-slate-muted">
                 {service.governmentFeeLabel}:{" "}
                 {service.governmentFeeWaived
                   ? "waived"
@@ -53,7 +53,7 @@ export default async function AdminPricingPage({
                 <form
                   key={pack.tier}
                   action={savePricing}
-                  className="rounded-[12px] border border-line p-3"
+                  className="rounded-[12px] border border-cream-300 p-3"
                 >
                   <input type="hidden" name="kind" value="package" />
                   <input type="hidden" name="serviceSlug" value={service.slug} />
@@ -61,7 +61,7 @@ export default async function AdminPricingPage({
                   <p className="text-[12px] font-medium">{pack.name}</p>
                   <div className="mt-2 flex items-end gap-2">
                     <label className="flex-1">
-                      <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">
+                      <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                         Price
                       </span>
                       <input
@@ -76,7 +76,7 @@ export default async function AdminPricingPage({
                       Save
                     </button>
                   </div>
-                  <p className="mt-1 text-[10.5px] text-muted">
+                  <p className="mt-1 text-[10.5px] text-slate-muted">
                     Partner cost {formatMoney(pack.partnerCost, service.currency)}, margin{" "}
                     {formatMoney(pack.margin, service.currency)}
                   </p>
@@ -85,13 +85,13 @@ export default async function AdminPricingPage({
             </div>
 
             <div className="mt-4 grid gap-3 md:grid-cols-2">
-              <form action={savePricing} className="rounded-[12px] border border-line p-3">
+              <form action={savePricing} className="rounded-[12px] border border-cream-300 p-3">
                 <input type="hidden" name="kind" value="government" />
                 <input type="hidden" name="serviceSlug" value={service.slug} />
                 <p className="text-[12px] font-medium">Government fee</p>
                 <div className="mt-2 flex flex-wrap items-end gap-2">
                   <label>
-                    <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                       Amount
                     </span>
                     <input
@@ -107,7 +107,7 @@ export default async function AdminPricingPage({
                       type="checkbox"
                       name="waived"
                       defaultChecked={service.governmentFeeWaived}
-                      className="h-4 w-4 accent-forest"
+                      className="h-4 w-4 accent-navy-900"
                     />
                     Waived
                   </label>
@@ -117,7 +117,7 @@ export default async function AdminPricingPage({
                 </div>
               </form>
 
-              <form action={saveServiceCopy} className="rounded-[12px] border border-line p-3">
+              <form action={saveServiceCopy} className="rounded-[12px] border border-cream-300 p-3">
                 <input type="hidden" name="slug" value={service.slug} />
                 <p className="text-[12px] font-medium">Service copy</p>
                 <div className="mt-2 grid gap-2">
@@ -152,7 +152,7 @@ export default async function AdminPricingPage({
               <input type="hidden" name="slug" value={service.slug} />
               <div className="flex-1">
                 <p className="text-[12.5px] font-medium">{service.name}</p>
-                <p className="text-[10.5px] text-muted">
+                <p className="text-[10.5px] text-slate-muted">
                   {service.billing === "yearly" ? "Yearly" : "One-off"} ·{" "}
                   {service.quote || service.price === null
                     ? "By quote"
@@ -184,7 +184,7 @@ export default async function AdminPricingPage({
               <input type="hidden" name="slug" value={tier.slug} />
               <p className="w-full text-[12.5px] font-medium">{tier.name}</p>
               <label>
-                <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">From</span>
+                <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">From</span>
                 <input
                   name="from"
                   type="number"
@@ -194,7 +194,7 @@ export default async function AdminPricingPage({
                 />
               </label>
               <label>
-                <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">
+                <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                   To (blank for quote)
                 </span>
                 <input
@@ -216,14 +216,14 @@ export default async function AdminPricingPage({
       <section>
         <h2 className="font-display text-[22px] tracking-[-0.02em]">Price change history</h2>
         {history.length === 0 ? (
-          <p className="mt-2 text-[12.5px] text-muted">No changes yet.</p>
+          <p className="mt-2 text-[12.5px] text-slate-muted">No changes yet.</p>
         ) : (
           <div className="card mt-3 overflow-x-auto">
             <table className="w-full min-w-[640px] text-left">
               <thead>
-                <tr className="border-b border-line">
+                <tr className="border-b border-cream-300">
                   {["When", "Scope", "Item", "From", "To", "By"].map((heading) => (
-                    <th key={heading} className="px-4 py-2.5 text-[10px] uppercase tracking-[0.1em] text-muted">
+                    <th key={heading} className="px-4 py-2.5 text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                       {heading}
                     </th>
                   ))}
@@ -231,7 +231,7 @@ export default async function AdminPricingPage({
               </thead>
               <tbody>
                 {history.map((change) => (
-                  <tr key={change.id} className="border-b border-line last:border-0">
+                  <tr key={change.id} className="border-b border-cream-300 last:border-0">
                     <td className="mono px-4 py-2 text-[11px]">
                       {new Date(change.at).toLocaleString("en-GB", {
                         day: "2-digit",

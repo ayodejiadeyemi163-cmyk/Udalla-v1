@@ -34,7 +34,7 @@ export function CookieBanner() {
       className="fixed bottom-4 left-4 right-4 z-40 md:left-6 md:right-auto md:max-w-md"
     >
       <div className="card p-5 shadow-lift">
-        <p className="text-[14px] leading-relaxed text-ink/85">
+        <p className="text-[14px] leading-relaxed text-navy-950/85">
           We use essential cookies to keep your session and your order drafts. Nothing else
           loads until you allow it.{" "}
           <Link href="/cookies" className="link-quiet">
@@ -42,7 +42,7 @@ export function CookieBanner() {
           </Link>
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <button type="button" onClick={() => choose("accepted")} className="btn btn-forest h-10 px-4 text-[13px]">
+          <button type="button" onClick={() => choose("accepted")} className="btn btn-navy h-10 px-4 text-[13px]">
             Accept all
           </button>
           <button type="button" onClick={() => choose("rejected")} className="btn btn-outline h-10 px-4 text-[13px]">

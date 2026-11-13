@@ -34,11 +34,11 @@ export default async function LawyerPage({
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         {params.error ? (
-          <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">
+          <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">
             {params.error}
           </p>
         ) : (
-          <p className="text-[12.5px] text-muted">
+          <p className="text-[12.5px] text-slate-muted">
             {matters.length} matter{matters.length === 1 ? "" : "s"} on your desk.
           </p>
         )}
@@ -50,13 +50,13 @@ export default async function LawyerPage({
       </div>
 
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">Saved.</p>
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">Saved.</p>
       ) : null}
 
       {threads.length === 0 ? (
         <div className="card p-9 text-center">
           <p className="font-display text-[21px] tracking-[-0.02em]">Nothing assigned yet</p>
-          <p className="mx-auto mt-2 max-w-sm text-[13px] leading-relaxed text-ink/65">
+          <p className="mx-auto mt-2 max-w-sm text-[13px] leading-relaxed text-navy-950/65">
             Compliance requests appear here once an administrator assigns them to you.
           </p>
         </div>
@@ -66,11 +66,11 @@ export default async function LawyerPage({
             <article key={matter.id} className="card p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="mono text-[11px] text-muted">{matter.reference}</p>
+                  <p className="mono text-[11px] text-slate-muted">{matter.reference}</p>
                   <h2 className="mt-1 font-display text-[20px] tracking-[-0.02em]">
                     {matter.serviceName}
                   </h2>
-                  <p className="text-[12px] text-muted">
+                  <p className="text-[12px] text-slate-muted">
                     Opened {new Date(matter.createdAt).toLocaleDateString("en-GB")}
                     {matter.deadline ? ` · deadline ${matter.deadline}` : ""}
                   </p>
@@ -83,11 +83,11 @@ export default async function LawyerPage({
                 </div>
               </div>
 
-              <p className="mt-3 whitespace-pre-line text-[13px] leading-relaxed text-ink/75">
+              <p className="mt-3 whitespace-pre-line text-[13px] leading-relaxed text-navy-950/75">
                 {matter.detail}
               </p>
 
-              <div className="mt-4 grid gap-4 border-t border-line pt-4 lg:grid-cols-2">
+              <div className="mt-4 grid gap-4 border-t border-cream-300 pt-4 lg:grid-cols-2">
                 <div>
                   <h3 className="text-[13px] font-medium">Update the matter</h3>
                   <form action={updateMatterStatus} className="mt-2 grid gap-2">
@@ -104,7 +104,7 @@ export default async function LawyerPage({
                       placeholder="Note for the timeline, optional"
                       className="field h-10 py-1 text-[12.5px]"
                     />
-                    <button type="submit" className="btn btn-forest h-10 w-fit px-3 text-[12px]">
+                    <button type="submit" className="btn btn-navy h-10 w-fit px-3 text-[12px]">
                       Save status
                     </button>
                   </form>
@@ -112,16 +112,16 @@ export default async function LawyerPage({
                   <ol className="mt-4 space-y-2">
                     {matter.timeline.map((entry, index) => (
                       <li key={`${entry.status}-${index}`} className="flex gap-2 text-[12px]">
-                        <span className="mono w-6 flex-none text-[10.5px] text-muted">
+                        <span className="mono w-6 flex-none text-[10.5px] text-slate-muted">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <span>
                           <span className="capitalize">{entry.status.replace("-", " ")}</span>{" "}
-                          <span className="mono text-[10.5px] text-muted">
+                          <span className="mono text-[10.5px] text-slate-muted">
                             {new Date(entry.at).toLocaleDateString("en-GB")}
                           </span>
                           {entry.note ? (
-                            <span className="block text-[11.5px] text-muted">{entry.note}</span>
+                            <span className="block text-[11.5px] text-slate-muted">{entry.note}</span>
                           ) : null}
                         </span>
                       </li>
@@ -144,7 +144,7 @@ export default async function LawyerPage({
 
               <Link
                 href={`/dashboard/compliance/${matter.id}`}
-                className="mt-3 inline-block text-[11.5px] text-forest hover:underline"
+                className="mt-3 inline-block text-[11.5px] text-navy-900 hover:underline"
               >
                 Open the customer thread view
               </Link>

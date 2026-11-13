@@ -19,25 +19,25 @@ export default async function AdminMattersPage({
   return (
     <div className="space-y-5">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">Saved.</p>
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">Saved.</p>
       ) : null}
 
       <h2 className="font-display text-[22px] tracking-[-0.02em]">Compliance matters</h2>
 
       {matters.length === 0 ? (
-        <p className="text-[13px] text-muted">No matters yet.</p>
+        <p className="text-[13px] text-slate-muted">No matters yet.</p>
       ) : (
         <ul className="space-y-3">
           {matters.map((matter) => (
             <li key={matter.id} className="card p-4 md:p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="mono text-[11.5px] text-muted">{matter.reference}</p>
+                  <p className="mono text-[11.5px] text-slate-muted">{matter.reference}</p>
                   <p className="mt-1 text-[14.5px] font-medium">{matter.serviceName}</p>
-                  <p className="mt-1 max-w-2xl text-[12.5px] leading-relaxed text-ink/65">
+                  <p className="mt-1 max-w-2xl text-[12.5px] leading-relaxed text-navy-950/65">
                     {matter.detail}
                   </p>
                 </div>
@@ -49,11 +49,11 @@ export default async function AdminMattersPage({
                 </div>
               </div>
 
-              <div className="mt-4 grid gap-3 border-t border-line pt-3 md:grid-cols-2">
+              <div className="mt-4 grid gap-3 border-t border-cream-300 pt-3 md:grid-cols-2">
                 <form action={assignMatter} className="flex flex-wrap items-end gap-2">
                   <input type="hidden" name="matterId" value={matter.id} />
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Lawyer
                     </span>
                     <select
@@ -77,7 +77,7 @@ export default async function AdminMattersPage({
                 <form action={updateMatterStatus} className="flex flex-wrap items-end gap-2">
                   <input type="hidden" name="matterId" value={matter.id} />
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Status
                     </span>
                     <select name="status" defaultValue={matter.status} className="field h-10 py-1 text-[12.5px]">
@@ -89,12 +89,12 @@ export default async function AdminMattersPage({
                     </select>
                   </label>
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Note
                     </span>
                     <input name="note" className="field h-10 py-1 text-[12.5px]" placeholder="Optional" />
                   </label>
-                  <button type="submit" className="btn btn-forest h-10 px-3 text-[12px]">
+                  <button type="submit" className="btn btn-navy h-10 px-3 text-[12px]">
                     Update
                   </button>
                 </form>
@@ -102,7 +102,7 @@ export default async function AdminMattersPage({
 
               <Link
                 href={`/dashboard/compliance/${matter.id}`}
-                className="mt-3 inline-block text-[11.5px] text-forest hover:underline"
+                className="mt-3 inline-block text-[11.5px] text-navy-900 hover:underline"
               >
                 Open thread
               </Link>

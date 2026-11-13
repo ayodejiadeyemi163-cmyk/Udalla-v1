@@ -37,7 +37,7 @@ export default async function WebsitesPage() {
         </div>
       </PageHero>
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Websites" }]} />
 
@@ -55,11 +55,11 @@ export default async function WebsitesPage() {
                     ? `From ${formatMoney(tier.from, tier.currency)}`
                     : formatRange(tier.from, tier.to, tier.currency)}
                 </p>
-                <p className="mt-3 text-[14px] leading-relaxed text-ink/70">{tier.summary}</p>
+                <p className="mt-3 text-[14px] leading-relaxed text-navy-950/70">{tier.summary}</p>
                 <ul className="mt-5 grid flex-1 gap-2 sm:grid-cols-2">
                   {tier.includes.map((item) => (
-                    <li key={item} className="flex gap-2 text-[13px] text-ink/75">
-                      <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-forest" />
+                    <li key={item} className="flex gap-2 text-[13px] text-navy-950/75">
+                      <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-navy-900" />
                       {item}
                     </li>
                   ))}
@@ -76,7 +76,7 @@ export default async function WebsitesPage() {
             ))}
           </div>
 
-          <p className="mt-6 text-[12px] text-muted">
+          <p className="mt-6 text-[12px] text-slate-muted">
             Website ranges are quoted in naira and can be paid in instalments. Hosting and
             domain costs are quoted separately. {priceNote}
           </p>
@@ -94,11 +94,11 @@ export default async function WebsitesPage() {
                   "Design and build, with a staging link you can click through.",
                   "Handover with the code, the content and a short guide.",
                 ].map((step, index) => (
-                  <li key={step} className="flex gap-4 border-b border-line pb-4 last:border-0">
+                  <li key={step} className="flex gap-4 border-b border-cream-300 pb-4 last:border-0">
                     <span className="numeral w-10 flex-none text-[26px]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p className="pt-1 text-[14px] leading-relaxed text-ink/75">{step}</p>
+                    <p className="pt-1 text-[14px] leading-relaxed text-navy-950/75">{step}</p>
                   </li>
                 ))}
               </ol>
@@ -110,18 +110,18 @@ export default async function WebsitesPage() {
         </div>
       </section>
 
-      <section id="enquiry" className="border-t border-line bg-ivory">
+      <section id="enquiry" className="border-t border-cream-300 bg-cream-100">
         <div className="wrap grid gap-10 py-14 md:py-20 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="eyebrow">Enquiry</p>
             <h2 className="display mt-3 text-[clamp(1.9rem,1.5rem+1.8vw,2.8rem)]">
               Tell us about the site you need
             </h2>
-            <p className="mt-4 text-[14.5px] leading-relaxed text-ink/70">
+            <p className="mt-4 text-[14.5px] leading-relaxed text-navy-950/70">
               One form reaches the developer team. We reply within 24 hours, Monday to
               Saturday, with a scope and a fixed price.
             </p>
-            <p className="mt-4 text-[13px] text-muted">
+            <p className="mt-4 text-[13px] text-slate-muted">
               Prefer to talk first?{" "}
               <a href={contact.whatsappHref} className="link-quiet">
                 Message us on WhatsApp

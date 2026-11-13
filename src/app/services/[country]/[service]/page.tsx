@@ -103,7 +103,7 @@ export default async function ServicePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="bg-paper">
+      <div className="bg-cream-50">
         <div className="wrap py-8 md:py-12">
           <Breadcrumbs
             items={[
@@ -117,7 +117,7 @@ export default async function ServicePage({
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="pill pill-forest">
+                <span className="pill pill-emerald-soft">
                   <CountryMark mark={countryEntry?.mark ?? "ng"} className="h-3.5 w-3.5" />
                   {countryEntry?.name}
                 </span>
@@ -129,11 +129,11 @@ export default async function ServicePage({
               <h1 className="display mt-5 text-[clamp(2.3rem,1.8rem+3vw,4rem)]">
                 {entry.name}
               </h1>
-              <p className="mt-5 max-w-2xl text-[16.5px] leading-relaxed text-ink/75">
+              <p className="mt-5 max-w-2xl text-[16.5px] leading-relaxed text-navy-950/75">
                 {entry.description}
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 border-y border-line py-4">
+              <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 border-y border-cream-300 py-4">
                 <div>
                   <p className="eyebrow">Packages from</p>
                   <p className="mono mt-1 text-[18px]">
@@ -150,7 +150,7 @@ export default async function ServicePage({
                 </div>
                 <div>
                   <p className="eyebrow">Processing</p>
-                  <p className="mt-1 max-w-[26ch] text-[13px] text-ink/75">{entry.processing}</p>
+                  <p className="mt-1 max-w-[26ch] text-[13px] text-navy-950/75">{entry.processing}</p>
                 </div>
               </div>
 
@@ -159,7 +159,7 @@ export default async function ServicePage({
               </h2>
               <ol className="mt-5 space-y-5">
                 {entry.steps.map((step, index) => (
-                  <li key={step.title} className="flex gap-4 border-b border-line pb-5 last:border-0">
+                  <li key={step.title} className="flex gap-4 border-b border-cream-300 pb-5 last:border-0">
                     <span className="numeral w-12 flex-none text-[30px]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -167,7 +167,7 @@ export default async function ServicePage({
                       <h3 className="text-[16px] font-semibold tracking-[-0.01em]">
                         {step.title}
                       </h3>
-                      <p className="mt-1.5 text-[14px] leading-relaxed text-ink/70">{step.body}</p>
+                      <p className="mt-1.5 text-[14px] leading-relaxed text-navy-950/70">{step.body}</p>
                     </div>
                   </li>
                 ))}
@@ -178,8 +178,8 @@ export default async function ServicePage({
               </h2>
               <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
                 {entry.includes.map((item) => (
-                  <li key={item} className="flex gap-2 text-[13.5px] text-ink/80">
-                    <Check className="mt-0.5 h-4 w-4 flex-none text-forest" />
+                  <li key={item} className="flex gap-2 text-[13.5px] text-navy-950/80">
+                    <Check className="mt-0.5 h-4 w-4 flex-none text-navy-900" />
                     {item}
                   </li>
                 ))}
@@ -190,12 +190,12 @@ export default async function ServicePage({
                   <h2 className="mt-10 font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] tracking-[-0.03em]">
                     Optional add-ons
                   </h2>
-                  <ul className="mt-4 divide-y divide-line border-y border-line">
+                  <ul className="mt-4 divide-y divide-cream-300 border-y border-cream-300">
                     {entry.addOns.map((addOn) => (
                       <li key={addOn.slug} className="flex items-start justify-between gap-4 py-3.5">
                         <div>
                           <p className="text-[14px] font-medium">{addOn.name}</p>
-                          <p className="mt-0.5 text-[12.5px] text-muted">{addOn.description}</p>
+                          <p className="mt-0.5 text-[12.5px] text-slate-muted">{addOn.description}</p>
                         </div>
                         <p className="mono whitespace-nowrap text-[13px]">
                           {formatMoney(addOn.price, entry.currency)}
@@ -215,13 +215,13 @@ export default async function ServicePage({
                   initialTier={initialTier}
                   priceNote={priceNote}
                 />
-                <div className="mt-4 rounded-[14px] border border-line bg-ivory/60 p-4">
-                  <p className="text-[12.5px] leading-relaxed text-ink/70">
+                <div className="mt-4 rounded-[14px] border border-cream-300 bg-cream-100/60 p-4">
+                  <p className="text-[12.5px] leading-relaxed text-navy-950/70">
                     {brand.filingNote}
                   </p>
                   <a
                     href={contact.whatsappHref}
-                    className="mt-3 inline-flex items-center gap-2 text-[13px] font-medium text-forest hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-[13px] font-medium text-navy-900 hover:underline"
                   >
                     Ask a question on WhatsApp
                     <ArrowRight />
@@ -233,7 +233,7 @@ export default async function ServicePage({
         </div>
       </div>
 
-      <section className="border-y border-line bg-ivory">
+      <section className="border-y border-cream-300 bg-cream-100">
         <div className="wrap py-12 md:py-16">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -241,7 +241,7 @@ export default async function ServicePage({
               <h2 className="display mt-3 text-[clamp(1.8rem,1.4rem+1.6vw,2.6rem)]">
                 About this registration
               </h2>
-              <p className="mt-3 text-[13.5px] leading-relaxed text-ink/70">
+              <p className="mt-3 text-[13.5px] leading-relaxed text-navy-950/70">
                 Something missing? Send it to the team and we will answer in plain language.
               </p>
             </div>
@@ -251,7 +251,7 @@ export default async function ServicePage({
           </div>
 
           {siblings.length > 0 ? (
-            <div className="mt-12 border-t border-line pt-8">
+            <div className="mt-12 border-t border-cream-300 pt-8">
               <p className="eyebrow mb-4">Also in {countryEntry?.name}</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {siblings.map((sibling) => (
@@ -261,7 +261,7 @@ export default async function ServicePage({
                     className="card flex items-center justify-between gap-4 p-4 transition hover:-translate-y-0.5 hover:shadow-lift"
                   >
                     <span className="text-[14px] font-medium">{sibling.name}</span>
-                    <span className="mono text-[12.5px] text-muted">
+                    <span className="mono text-[12.5px] text-slate-muted">
                       from {formatMoney(sibling.packages[0]?.price ?? 0, sibling.currency)}
                     </span>
                   </Link>

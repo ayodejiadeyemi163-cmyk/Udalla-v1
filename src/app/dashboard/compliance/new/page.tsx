@@ -20,19 +20,19 @@ export default async function NewCompliancePage({
 
   return (
     <div className="mx-auto max-w-2xl">
-      <Link href="/dashboard/compliance" className="text-[12.5px] text-forest hover:underline">
+      <Link href="/dashboard/compliance" className="text-[12.5px] text-navy-900 hover:underline">
         &larr; Compliance
       </Link>
       <h2 className="display mt-3 text-[clamp(1.8rem,1.4rem+1.6vw,2.5rem)]">
         Request a compliance service
       </h2>
-      <p className="mt-2 text-[13.5px] leading-relaxed text-ink/70">
+      <p className="mt-2 text-[13.5px] leading-relaxed text-navy-950/70">
         A request becomes a matter with a timeline and a message thread. A partner lawyer
         reviews the scope and any government fee before anything is filed.
       </p>
 
       {params.error ? (
-        <p className="mt-4 rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">
+        <p className="mt-4 rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">
           {params.error}
         </p>
       ) : null}
@@ -70,13 +70,13 @@ export default async function NewCompliancePage({
             placeholder="Company name, registry number and anything the lawyer should know."
             required
           />
-          <p className="mt-1 text-[11.5px] text-muted">
+          <p className="mt-1 text-[11.5px] text-slate-muted">
             Include the entity name and current registration number if you have one.
           </p>
         </div>
 
-        <label className="flex items-start gap-3 text-[12.5px] leading-relaxed text-ink/80">
-          <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 flex-none accent-forest" />
+        <label className="flex items-start gap-3 text-[12.5px] leading-relaxed text-navy-950/80">
+          <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 flex-none accent-navy-900" />
           <span>
             I agree that my request and contact details are shared with an independent
             partner lawyer, as described in the{" "}

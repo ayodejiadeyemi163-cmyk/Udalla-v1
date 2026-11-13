@@ -63,7 +63,7 @@ export default async function ComplianceServicePage({
         intro={service.summary}
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs
             items={[
@@ -76,7 +76,7 @@ export default async function ComplianceServicePage({
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <div className="flex flex-wrap gap-2">
-                <span className="pill pill-forest">
+                <span className="pill pill-emerald-soft">
                   <CountryMark mark={country?.mark ?? "ng"} className="h-3.5 w-3.5" />
                   {country?.name}
                 </span>
@@ -84,13 +84,13 @@ export default async function ComplianceServicePage({
                   {service.billing === "yearly" ? "Yearly, invoiced" : "One-off filing"}
                 </span>
               </div>
-              <p className="mt-6 text-[16px] leading-relaxed text-ink/80">{service.details}</p>
+              <p className="mt-6 text-[16px] leading-relaxed text-navy-950/80">{service.details}</p>
 
               <h2 className="mt-10 font-display text-[24px] tracking-[-0.03em]">What is included</h2>
               <ul className="mt-4 space-y-2.5">
                 {service.includes.map((item) => (
-                  <li key={item} className="flex gap-2 text-[14px] text-ink/80">
-                    <Check className="mt-0.5 h-4 w-4 flex-none text-forest" />
+                  <li key={item} className="flex gap-2 text-[14px] text-navy-950/80">
+                    <Check className="mt-0.5 h-4 w-4 flex-none text-navy-900" />
                     {item}
                   </li>
                 ))}
@@ -104,11 +104,11 @@ export default async function ComplianceServicePage({
                   "The filing is prepared and submitted once you approve.",
                   "The acknowledgement lands in your dashboard.",
                 ].map((step, index) => (
-                  <li key={step} className="flex gap-4 border-b border-line pb-4 last:border-0">
+                  <li key={step} className="flex gap-4 border-b border-cream-300 pb-4 last:border-0">
                     <span className="numeral w-10 flex-none text-[26px]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p className="pt-1 text-[14px] leading-relaxed text-ink/75">{step}</p>
+                    <p className="pt-1 text-[14px] leading-relaxed text-navy-950/75">{step}</p>
                   </li>
                 ))}
               </ol>
@@ -136,9 +136,9 @@ export default async function ComplianceServicePage({
                     : formatMoney(service.price, service.currency)}
                 </p>
                 {service.billing === "yearly" ? (
-                  <p className="mt-1 text-[12.5px] text-muted">per year, invoiced and reminded</p>
+                  <p className="mt-1 text-[12.5px] text-slate-muted">per year, invoiced and reminded</p>
                 ) : null}
-                <p className="mt-4 border-t border-line pt-4 text-[12.5px] leading-relaxed text-ink/70">
+                <p className="mt-4 border-t border-cream-300 pt-4 text-[12.5px] leading-relaxed text-navy-950/70">
                   Government fees are shown separately at cost and confirmed before filing.
                   Nothing is charged automatically.
                 </p>
@@ -149,12 +149,12 @@ export default async function ComplianceServicePage({
                   Request this service
                   <ArrowRight />
                 </Link>
-                <p className="mt-3 text-[11.5px] leading-relaxed text-muted">
+                <p className="mt-3 text-[11.5px] leading-relaxed text-slate-muted">
                   You will be asked to log in. Every request becomes a matter with a timeline
                   and messages.
                 </p>
-                <div className="mt-5 border-t border-line pt-4">
-                  <p className="text-[12px] leading-relaxed text-ink/70">{brand.filingNote}</p>
+                <div className="mt-5 border-t border-cream-300 pt-4">
+                  <p className="text-[12px] leading-relaxed text-navy-950/70">{brand.filingNote}</p>
                   <a href={contact.whatsappHref} className="link-quiet mt-2 inline-block text-[12.5px]">
                     Ask on WhatsApp
                   </a>
@@ -163,17 +163,17 @@ export default async function ComplianceServicePage({
             </aside>
           </div>
 
-          <div className="mt-12 border-t border-line pt-8">
+          <div className="mt-12 border-t border-cream-300 pt-8">
             <p className="eyebrow mb-4">Other compliance services</p>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {others.slice(0, 6).map((entry) => (
                 <Link
                   key={entry.slug}
                   href={`/compliance/${entry.slug}`}
-                  className="flex items-center justify-between gap-3 rounded-[12px] border border-line px-4 py-3 text-[13px] hover:border-ink/30"
+                  className="flex items-center justify-between gap-3 rounded-[12px] border border-cream-300 px-4 py-3 text-[13px] hover:border-navy-950/30"
                 >
                   {entry.name}
-                  <span className="mono text-[11.5px] text-muted">
+                  <span className="mono text-[11.5px] text-slate-muted">
                     {entry.quote || entry.price === null
                       ? "Quote"
                       : formatMoney(entry.price, entry.currency)}

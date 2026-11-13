@@ -11,14 +11,14 @@ export function GuideCards({ guides }: { guides: Guide[] }) {
             {guide.readingMinutes} min read
           </p>
           <h3 className="mt-4 font-display text-[22px] leading-[1.1] tracking-[-0.025em]">
-            <Link href={`/guides/${guide.slug}`} className="hover:text-forest">
+            <Link href={`/guides/${guide.slug}`} className="hover:text-navy-900">
               {guide.title}
             </Link>
           </h3>
-          <p className="mt-3 flex-1 text-[14px] leading-relaxed text-ink/70">{guide.excerpt}</p>
+          <p className="mt-3 flex-1 text-[14px] leading-relaxed text-navy-950/70">{guide.excerpt}</p>
           <Link
             href={`/guides/${guide.slug}`}
-            className="mt-5 text-[13px] font-medium text-forest hover:underline"
+            className="mt-5 text-[13px] font-medium text-navy-900 hover:underline"
           >
             Read the guide
           </Link>

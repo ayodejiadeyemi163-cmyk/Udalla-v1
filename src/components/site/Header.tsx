@@ -22,7 +22,7 @@ function Wordmark({ onClick }: { onClick?: () => void }) {
     <Link
       href="/"
       onClick={onClick}
-      className="font-display text-[27px] leading-none tracking-[-0.045em] text-ink"
+      className="font-display text-[27px] leading-none tracking-[-0.045em] text-navy-950"
       aria-label="Udalla home"
     >
       Udalla
@@ -52,7 +52,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
     user?.role === "admin" ? "/admin" : user?.role === "lawyer" ? "/lawyer" : "/dashboard";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-ivory/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-cream-300/80 bg-cream-100/95 backdrop-blur-sm">
       <div className="wrap flex h-[68px] items-center justify-between gap-4 md:h-[78px]">
         <div className="flex items-center gap-6">
           <Wordmark />
@@ -61,10 +61,10 @@ export function Header({ groups, contact, user }: HeaderProps) {
               <div key={group.label} className="group relative">
                 <Link
                   href={group.main.href}
-                  className="flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium text-ink/85 transition hover:bg-ink/5 hover:text-ink"
+                  className="flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium text-navy-950/85 transition hover:bg-navy-950/5 hover:text-navy-950"
                 >
                   {group.label}
-                  <Chevron className="mt-0.5 text-ink/50 transition group-hover:rotate-180" />
+                  <Chevron className="mt-0.5 text-slate-muted transition group-hover:rotate-180" />
                 </Link>
                 <div
                   className={`invisible absolute left-0 top-full z-50 translate-y-1 pt-2 opacity-0 transition duration-150 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
@@ -74,14 +74,14 @@ export function Header({ groups, contact, user }: HeaderProps) {
                   <div className="card overflow-hidden p-2 shadow-lift">
                     <Link
                       href={group.main.href}
-                      className="flex items-center justify-between rounded-[10px] px-3 py-2.5 text-[14px] font-semibold text-forest hover:bg-forest/5"
+                      className="flex items-center justify-between rounded-[10px] px-3 py-2.5 text-[14px] font-semibold text-navy-900 hover:bg-navy-900/5"
                     >
                       {group.main.label}
-                      <span aria-hidden="true" className="text-forest/60">
+                      <span aria-hidden="true" className="text-navy-900/60">
                         &rarr;
                       </span>
                     </Link>
-                    <div className="my-2 border-t border-line" />
+                    <div className="my-2 border-t border-cream-300" />
                     <ul
                       className={
                         group.width === "wide"
@@ -93,7 +93,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
                         <li key={link.href + link.label}>
                           <Link
                             href={link.href}
-                            className="block rounded-[10px] px-3 py-2 text-[13.5px] leading-snug text-ink/80 hover:bg-ivory hover:text-ink"
+                            className="block rounded-[10px] px-3 py-2 text-[13.5px] leading-snug text-navy-950/80 hover:bg-cream-100 hover:text-navy-950"
                           >
                             {link.label}
                           </Link>
@@ -111,20 +111,20 @@ export function Header({ groups, contact, user }: HeaderProps) {
           <div className="hidden text-right xl:block">
             <a
               href={contact.phoneHref}
-              className="mono block text-[12.5px] leading-tight text-ink"
+              className="mono block text-[12.5px] leading-tight text-navy-950"
             >
               {contact.phone}
             </a>
             <a
               href={contact.whatsappHref}
-              className="block text-[11.5px] text-muted hover:text-forest"
+              className="block text-[11.5px] text-slate-muted hover:text-navy-900"
             >
               WhatsApp, {contact.hours.replace("We reply within ", "").toLowerCase()}
             </a>
           </div>
           <Link
             href={user ? dashboardHref : "/login"}
-            className="hidden text-[14px] font-medium text-ink/80 hover:text-ink sm:block"
+            className="hidden text-[14px] font-medium text-navy-950/80 hover:text-navy-950 sm:block"
           >
             {user ? "Dashboard" : "Log in"}
           </Link>
@@ -134,7 +134,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-950/15 lg:hidden"
             aria-label="Open menu"
             aria-expanded={open}
           >
@@ -147,7 +147,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
       </div>
 
       {open ? (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-ivory lg:hidden">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-cream-100 lg:hidden">
           <div className="wrap flex h-[68px] items-center justify-between">
             <Wordmark onClick={() => setOpen(false)} />
             <div className="flex items-center gap-2">
@@ -157,7 +157,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-950/15"
                 aria-label="Close menu"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -169,7 +169,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
 
           <nav aria-label="Mobile" className="wrap pb-24 pt-4">
             {groups.map((group) => (
-              <div key={group.label} className="border-b border-dashed border-line py-6">
+              <div key={group.label} className="border-b border-dashed border-cream-300 py-6">
                 <p className="eyebrow mb-3">{group.label}</p>
                 <Link
                   href={group.main.href}
@@ -184,7 +184,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
                       <Link
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className="block py-2 text-[16px] text-ink/75"
+                        className="block py-2 text-[16px] text-navy-950/75"
                       >
                         {link.label}
                       </Link>
@@ -202,13 +202,13 @@ export function Header({ groups, contact, user }: HeaderProps) {
               >
                 {user ? "Go to dashboard" : "Log in"}
               </Link>
-              <a href={`mailto:${contact.email}`} className="text-[14px] text-ink/75">
+              <a href={`mailto:${contact.email}`} className="text-[14px] text-navy-950/75">
                 {contact.email}
               </a>
-              <a href={contact.phoneHref} className="mono text-[14px] text-ink/75">
+              <a href={contact.phoneHref} className="mono text-[14px] text-navy-950/75">
                 {contact.phone}
               </a>
-              <p className="text-[13px] text-muted">{contact.hours}</p>
+              <p className="text-[13px] text-slate-muted">{contact.hours}</p>
             </div>
           </nav>
         </div>

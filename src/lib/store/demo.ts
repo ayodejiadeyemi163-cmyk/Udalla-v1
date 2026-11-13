@@ -124,44 +124,6 @@ const homeFaqs: Faq[] = [
   },
 ];
 
-function seedLawyers(): Lawyer[] {
-  return [
-    {
-      id: DEMO_IDS.lawyerProfile,
-      displayName: "Partner lawyer, Nigeria",
-      jurisdiction: "Nigeria",
-      practiceAreas: ["Corporate compliance", "Annual returns", "Beneficial ownership"],
-      years: 12,
-      photoUrl: "",
-      showName: false,
-      showPhoto: false,
-      approved: true,
-    },
-    {
-      id: "law_demo_uk",
-      displayName: "Partner lawyer, United Kingdom",
-      jurisdiction: "United Kingdom",
-      practiceAreas: ["Confirmation statements", "Company secretarial", "Regulatory filings"],
-      years: 9,
-      photoUrl: "",
-      showName: false,
-      showPhoto: false,
-      approved: true,
-    },
-    {
-      id: "law_demo_us",
-      displayName: "Partner lawyer, United States",
-      jurisdiction: "United States",
-      practiceAreas: ["Annual reports", "State compliance", "Registered agent matters"],
-      years: 11,
-      photoUrl: "",
-      showName: false,
-      showPhoto: false,
-      approved: true,
-    },
-  ];
-}
-
 function seedOrders(): Order[] {
   const ngCompany = services.find((service) => service.slug === "limited-company");
   const uk = services.find((service) => service.slug === "private-limited-company");
@@ -348,7 +310,7 @@ export function seedDb(): Db {
         at: iso(-2),
       },
     ],
-    lawyers: seedLawyers(),
+    lawyers: [],
     guides: seedGuides,
     faqs: homeFaqs,
     leads: [],

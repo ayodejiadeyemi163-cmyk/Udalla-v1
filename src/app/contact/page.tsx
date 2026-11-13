@@ -34,16 +34,16 @@ export default async function ContactPage({
         intro="Email, call or send a WhatsApp message. Every message reaches the team that prepares filings, and we reply within 24 hours, Monday to Saturday."
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Contact" }]} />
 
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <div className="card divide-y divide-line">
+              <div className="card divide-y divide-cream-300">
                 <div className="p-6">
                   <p className="eyebrow">Email</p>
-                  <a href={`mailto:${contact.email}`} className="mt-2 block font-display text-[22px] tracking-[-0.02em] hover:text-forest">
+                  <a href={`mailto:${contact.email}`} className="mt-2 block font-display text-[22px] tracking-[-0.02em] hover:text-navy-900">
                     {contact.email}
                   </a>
                 </div>
@@ -57,19 +57,19 @@ export default async function ContactPage({
                   <p className="eyebrow">WhatsApp</p>
                   <a
                     href={contact.whatsappHref}
-                    className="mt-2 block text-[15px] text-forest hover:underline"
+                    className="mt-2 block text-[15px] text-navy-900 hover:underline"
                   >
                     Message the team on WhatsApp
                   </a>
-                  <p className="mono mt-1 text-[12.5px] text-muted">{contact.phone}</p>
+                  <p className="mono mt-1 text-[12.5px] text-slate-muted">{contact.phone}</p>
                 </div>
                 <div className="p-6">
                   <p className="eyebrow">Hours</p>
-                  <p className="mt-2 text-[14px] text-ink/80">{contact.hours}</p>
+                  <p className="mt-2 text-[14px] text-navy-950/80">{contact.hours}</p>
                 </div>
               </div>
 
-              <div className="mt-4 rounded-[14px] border border-line p-5">
+              <div className="mt-4 rounded-[14px] border border-cream-300 p-5">
                 <p className="eyebrow">Where we work</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {countries.map((country) => (
@@ -79,12 +79,12 @@ export default async function ContactPage({
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-[12.5px] leading-relaxed text-muted">
+                <p className="mt-3 text-[12.5px] leading-relaxed text-slate-muted">
                   We work remotely across all three jurisdictions. {contact.notLawFirm}
                 </p>
               </div>
 
-              <p className="mt-4 text-[12.5px] text-muted">
+              <p className="mt-4 text-[12.5px] text-slate-muted">
                 Looking for a website? The same form reaches the developer team.{" "}
                 <Link href="/websites" className="link-quiet">
                   See website ranges
@@ -95,7 +95,7 @@ export default async function ContactPage({
 
             <div className="lg:col-span-7">
               <EnquiryForm defaultType={defaultType} />
-              <p className="mt-4 text-[12px] leading-relaxed text-muted">
+              <p className="mt-4 text-[12px] leading-relaxed text-slate-muted">
                 By sending an enquiry you agree that {brand.legalName} can contact you about
                 it. We do not sell or share enquiry details. Read the{" "}
                 <Link href="/privacy" className="link-quiet">

@@ -13,15 +13,15 @@ export default async function AdminLawyersPage({
   return (
     <div className="space-y-5">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">Saved.</p>
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">Saved.</p>
       ) : null}
 
       <div>
         <h2 className="font-display text-[22px] tracking-[-0.02em]">Partner lawyers</h2>
-        <p className="mt-1 max-w-2xl text-[12.5px] leading-relaxed text-muted">
+        <p className="mt-1 max-w-2xl text-[12.5px] leading-relaxed text-slate-muted">
           Cards show on the home, compliance and about pages. Unapproved lawyers are hidden.
           An approved lawyer without a name and photo shows typography only: Partner lawyer,
           jurisdiction.
@@ -69,18 +69,18 @@ export default async function AdminLawyersPage({
             />
             <div className="flex flex-wrap items-center gap-4 pt-1 text-[12px]">
               <label className="flex items-center gap-2">
-                <input type="checkbox" name="approved" defaultChecked={lawyer.approved} className="h-4 w-4 accent-forest" />
+                <input type="checkbox" name="approved" defaultChecked={lawyer.approved} className="h-4 w-4 accent-navy-900" />
                 Approved
               </label>
               <label className="flex items-center gap-2">
-                <input type="checkbox" name="showName" defaultChecked={lawyer.showName} className="h-4 w-4 accent-forest" />
+                <input type="checkbox" name="showName" defaultChecked={lawyer.showName} className="h-4 w-4 accent-navy-900" />
                 Show name
               </label>
               <label className="flex items-center gap-2">
-                <input type="checkbox" name="showPhoto" defaultChecked={lawyer.showPhoto} className="h-4 w-4 accent-forest" />
+                <input type="checkbox" name="showPhoto" defaultChecked={lawyer.showPhoto} className="h-4 w-4 accent-navy-900" />
                 Show photo
               </label>
-              <button type="submit" className="btn btn-forest ml-auto h-9 px-3 text-[11.5px]">
+              <button type="submit" className="btn btn-navy ml-auto h-9 px-3 text-[11.5px]">
                 Save
               </button>
             </div>
@@ -99,15 +99,15 @@ export default async function AdminLawyersPage({
         <input name="photoUrl" placeholder="Photo URL, optional" className="field text-[13px]" />
         <div className="flex flex-wrap items-center gap-4 pt-1 text-[12px]">
           <label className="flex items-center gap-2">
-            <input type="checkbox" name="approved" className="h-4 w-4 accent-forest" />
+            <input type="checkbox" name="approved" className="h-4 w-4 accent-navy-900" />
             Approved
           </label>
           <label className="flex items-center gap-2">
-            <input type="checkbox" name="showName" className="h-4 w-4 accent-forest" />
+            <input type="checkbox" name="showName" className="h-4 w-4 accent-navy-900" />
             Show name
           </label>
           <label className="flex items-center gap-2">
-            <input type="checkbox" name="showPhoto" className="h-4 w-4 accent-forest" />
+            <input type="checkbox" name="showPhoto" className="h-4 w-4 accent-navy-900" />
             Show photo
           </label>
           <button type="submit" className="btn btn-primary ml-auto h-9 px-3 text-[11.5px]">

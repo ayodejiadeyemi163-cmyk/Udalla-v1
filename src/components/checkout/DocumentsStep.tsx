@@ -54,18 +54,18 @@ export function DocumentsStep({
     <div>
       <div
         className={`rounded-[14px] border border-dashed p-6 ${
-          demo ? "border-line bg-ivory/60" : "border-forest/35 bg-forest/[0.04]"
+          demo ? "border-cream-300 bg-cream-100/60" : "border-navy-900/35 bg-navy-900/[0.04]"
         }`}
       >
         <div className="flex items-start gap-3">
-          <span className="mt-0.5 text-forest">
+          <span className="mt-0.5 text-navy-900">
             <Upload />
           </span>
           <div>
             <p className="text-[14px] font-medium">
               {demo ? "Documents are disabled in this preview" : "Upload your documents"}
             </p>
-            <p className="mt-1 max-w-lg text-[12.5px] leading-relaxed text-muted">
+            <p className="mt-1 max-w-lg text-[12.5px] leading-relaxed text-slate-muted">
               {demo
                 ? "This preview with demo data accepts no real documents. In the live site, PDF, JPG, PNG and WEBP files up to 10 MB are checked by file signature and stored privately."
                 : "PDF, JPG, PNG or WEBP. Up to 10 MB per file. Files are stored privately and every access is logged."}
@@ -98,7 +98,7 @@ export function DocumentsStep({
       {status ? (
         <p
           className={`mt-3 rounded-[10px] px-3 py-2 text-[12.5px] ${
-            status.tone === "ok" ? "bg-forest/10 text-forest" : "bg-clay/10 text-clay"
+            status.tone === "ok" ? "bg-navy-900/10 text-navy-900" : "bg-danger-100 text-danger-600"
           }`}
         >
           {status.text}
@@ -109,7 +109,7 @@ export function DocumentsStep({
         <p className="eyebrow">Usually needed for {serviceName}</p>
         <ul className="mt-2 grid gap-1.5 sm:grid-cols-2">
           {required.map((item) => (
-            <li key={item} className="text-[13px] text-ink/75">
+            <li key={item} className="text-[13px] text-navy-950/75">
               {item}
             </li>
           ))}
@@ -117,11 +117,11 @@ export function DocumentsStep({
       </div>
 
       {documents.length > 0 ? (
-        <ul className="mt-5 divide-y divide-line border-y border-line">
+        <ul className="mt-5 divide-y divide-cream-300 border-y border-cream-300">
           {documents.map((document) => (
             <li key={document.name} className="flex items-center justify-between gap-3 py-3">
               <span className="truncate text-[13px]">{document.name}</span>
-              <span className="pill pill-forest">Uploaded</span>
+              <span className="pill pill-emerald-soft">Uploaded</span>
             </li>
           ))}
         </ul>
@@ -133,7 +133,7 @@ export function DocumentsStep({
           Continue to review
         </button>
       </form>
-      <p className="mt-3 text-[11.5px] text-muted">
+      <p className="mt-3 text-[11.5px] text-slate-muted">
         Missing a document? Continue and add it later from the dashboard.
       </p>
     </div>

@@ -42,7 +42,7 @@ export default async function FaqPage() {
         intro="If something is missing, send it in. We reply within 24 hours, Monday to Saturday."
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "FAQ" }]} />
           <div className="grid gap-10 lg:grid-cols-12">
@@ -55,11 +55,11 @@ export default async function FaqPage() {
                 <p className="mt-3 font-display text-[22px] leading-tight tracking-[-0.02em]">
                   Ask the team directly
                 </p>
-                <p className="mt-2 text-[13px] leading-relaxed text-ink/70">{contact.hours}</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-navy-950/70">{contact.hours}</p>
                 <a href={`mailto:${contact.email}`} className="link-quiet mt-3 block text-[13.5px]">
                   {contact.email}
                 </a>
-                <a href={contact.phoneHref} className="mono mt-1 block text-[13.5px] text-ink/80">
+                <a href={contact.phoneHref} className="mono mt-1 block text-[13.5px] text-navy-950/80">
                   {contact.phone}
                 </a>
                 <a
@@ -68,7 +68,7 @@ export default async function FaqPage() {
                 >
                   Message on WhatsApp
                 </a>
-                <div className="mt-5 border-t border-line pt-4 text-[11.5px] leading-relaxed text-muted">
+                <div className="mt-5 border-t border-cream-300 pt-4 text-[11.5px] leading-relaxed text-slate-muted">
                   {brand.filingNote}
                 </div>
                 <Link href="/contact" className="link-quiet mt-3 inline-block text-[12.5px]">

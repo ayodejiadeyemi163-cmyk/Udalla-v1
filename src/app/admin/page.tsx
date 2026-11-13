@@ -26,10 +26,10 @@ export default async function AdminOrdersPage({
   return (
     <div className="space-y-6">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">
           Saved.
         </p>
       ) : null}
@@ -65,18 +65,18 @@ export default async function AdminOrdersPage({
       </div>
 
       {orders.length === 0 ? (
-        <p className="text-[13px] text-muted">No orders yet.</p>
+        <p className="text-[13px] text-slate-muted">No orders yet.</p>
       ) : (
         <ul className="space-y-3">
           {orders.map((order) => (
             <li key={order.id} className="card p-4 md:p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="mono text-[11.5px] text-muted">{order.reference}</p>
+                  <p className="mono text-[11.5px] text-slate-muted">{order.reference}</p>
                   <p className="mt-1 text-[14.5px] font-medium capitalize">
                     {order.service.replace(/-/g, " ")}
                   </p>
-                  <p className="text-[12px] capitalize text-muted">
+                  <p className="text-[12px] capitalize text-slate-muted">
                     {order.country.replace(/-/g, " ")} · {order.packageTier} ·{" "}
                     {order.guestEmail || "no email"}
                   </p>
@@ -88,18 +88,18 @@ export default async function AdminOrdersPage({
                   </p>
                   <Link
                     href={`/dashboard/orders/${order.id}`}
-                    className="mt-1 inline-block text-[11.5px] text-forest hover:underline"
+                    className="mt-1 inline-block text-[11.5px] text-navy-900 hover:underline"
                   >
                     Open thread
                   </Link>
                 </div>
               </div>
 
-              <div className="mt-4 grid gap-3 border-t border-line pt-3 md:grid-cols-2">
+              <div className="mt-4 grid gap-3 border-t border-cream-300 pt-3 md:grid-cols-2">
                 <form action={updateOrderStatus} className="flex flex-wrap items-end gap-2">
                   <input type="hidden" name="orderId" value={order.id} />
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Status
                     </span>
                     <select name="status" defaultValue={order.status} className="field h-10 py-1 text-[12.5px]">
@@ -111,12 +111,12 @@ export default async function AdminOrdersPage({
                     </select>
                   </label>
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Note to customer
                     </span>
                     <input name="note" className="field h-10 py-1 text-[12.5px]" placeholder="Optional" />
                   </label>
-                  <button type="submit" className="btn btn-forest h-10 px-3 text-[12px]">
+                  <button type="submit" className="btn btn-navy h-10 px-3 text-[12px]">
                     Update
                   </button>
                 </form>
@@ -124,7 +124,7 @@ export default async function AdminOrdersPage({
                 <form action={assignOrder} className="flex flex-wrap items-end gap-2">
                   <input type="hidden" name="orderId" value={order.id} />
                   <label className="flex-1">
-                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10.5px] uppercase tracking-[0.1em] text-slate-muted">
                       Assigned lawyer
                     </span>
                     <select
@@ -150,7 +150,7 @@ export default async function AdminOrdersPage({
         </ul>
       )}
 
-      <p className="text-[11.5px] text-muted">
+      <p className="text-[11.5px] text-slate-muted">
         Paid value across all orders: <span className="mono">{formatMoney(revenue, "NGN")}</span>{" "}
         equivalent, mixed currencies. Exports give exact figures per order.
       </p>

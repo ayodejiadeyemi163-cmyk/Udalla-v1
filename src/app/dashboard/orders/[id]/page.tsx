@@ -37,17 +37,17 @@ export default async function OrderDetailPage({
 
   return (
     <div>
-      <Link href="/dashboard" className="text-[12.5px] text-forest hover:underline">
+      <Link href="/dashboard" className="text-[12.5px] text-navy-900 hover:underline">
         &larr; Dashboard
       </Link>
 
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="mono text-[12px] text-muted">{order.reference}</p>
+          <p className="mono text-[12px] text-slate-muted">{order.reference}</p>
           <h1 className="display mt-1 text-[clamp(1.8rem,1.4rem+1.8vw,2.6rem)]">
             {service?.name ?? order.service}
           </h1>
-          <p className="mt-1 text-[13px] capitalize text-muted">
+          <p className="mt-1 text-[13px] capitalize text-slate-muted">
             {order.country.replace(/-/g, " ")} · {order.packageTier} package ·{" "}
             {new Date(order.createdAt).toLocaleDateString("en-GB")}
           </p>
@@ -68,31 +68,31 @@ export default async function OrderDetailPage({
             <h2 className="font-display text-[20px] tracking-[-0.02em]">Business details</h2>
             <dl className="mt-3 space-y-2 text-[13px]">
               <div className="flex flex-wrap gap-x-2">
-                <dt className="text-muted">Proposed names:</dt>
+                <dt className="text-slate-muted">Proposed names:</dt>
                 <dd>{order.business.proposedNames.join(" / ") || "Not provided"}</dd>
               </div>
               <div className="flex flex-wrap gap-x-2">
-                <dt className="text-muted">Activity:</dt>
+                <dt className="text-slate-muted">Activity:</dt>
                 <dd>{order.business.activity || "Not provided"}</dd>
               </div>
               <div className="flex flex-wrap gap-x-2">
-                <dt className="text-muted">Address:</dt>
+                <dt className="text-slate-muted">Address:</dt>
                 <dd>{order.business.address || "Not provided"}</dd>
               </div>
               {order.business.shareCapital ? (
                 <div className="flex flex-wrap gap-x-2">
-                  <dt className="text-muted">Share capital:</dt>
+                  <dt className="text-slate-muted">Share capital:</dt>
                   <dd className="mono">{order.business.shareCapital}</dd>
                 </div>
               ) : null}
             </dl>
 
             <h3 className="mt-5 text-[13px] font-medium">People</h3>
-            <ul className="mt-2 divide-y divide-line border-y border-line">
+            <ul className="mt-2 divide-y divide-cream-300 border-y border-cream-300">
               {order.people.map((person) => (
                 <li key={person.id} className="flex items-center justify-between gap-3 py-2 text-[13px]">
                   <span>
-                    {person.name} <span className="text-muted">({person.role})</span>
+                    {person.name} <span className="text-slate-muted">({person.role})</span>
                   </span>
                   <span className="mono text-[12px]">{person.ownership}%</span>
                 </li>
@@ -103,18 +103,18 @@ export default async function OrderDetailPage({
           <section className="card p-6">
             <h2 className="font-display text-[20px] tracking-[-0.02em]">Documents</h2>
             {order.documents.length === 0 ? (
-              <p className="mt-2 text-[13px] text-muted">
+              <p className="mt-2 text-[13px] text-slate-muted">
                 No documents on this order. Uploads open in the live deployment with private
                 storage configured.
               </p>
             ) : (
-              <ul className="mt-3 divide-y divide-line border-y border-line">
+              <ul className="mt-3 divide-y divide-cream-300 border-y border-cream-300">
                 {order.documents.map((document) => (
                   <li key={document.id} className="flex items-center justify-between gap-3 py-3">
                     <span className="truncate text-[13px]">{document.filename}</span>
                     <a
                       href={`/api/documents/${document.id}`}
-                      className="text-[12px] font-medium text-forest hover:underline"
+                      className="text-[12px] font-medium text-navy-900 hover:underline"
                     >
                       Download
                     </a>
@@ -122,7 +122,7 @@ export default async function OrderDetailPage({
                 ))}
               </ul>
             )}
-            <p className="mt-3 flex items-center gap-1.5 text-[11px] text-muted">
+            <p className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-muted">
               <Lock /> Private storage. Links expire after 60 seconds.
             </p>
           </section>
@@ -146,25 +146,25 @@ export default async function OrderDetailPage({
             <p className="eyebrow">Payment summary</p>
             <dl className="mt-3 space-y-1.5 text-[13px]">
               <div className="flex justify-between">
-                <dt className="text-ink/70">{pack?.name ?? order.packageTier} package</dt>
+                <dt className="text-navy-950/70">{pack?.name ?? order.packageTier} package</dt>
                 <dd className="mono">{formatMoney(order.packagePrice, order.currency)}</dd>
               </div>
               {order.addOnsTotal > 0 ? (
                 <div className="flex justify-between">
-                  <dt className="text-ink/70">Add-ons</dt>
+                  <dt className="text-navy-950/70">Add-ons</dt>
                   <dd className="mono">{formatMoney(order.addOnsTotal, order.currency)}</dd>
                 </div>
               ) : null}
               <div className="flex justify-between">
-                <dt className="text-ink/70">Government fee</dt>
+                <dt className="text-navy-950/70">Government fee</dt>
                 <dd className="mono">{formatMoney(order.governmentFee, order.currency)}</dd>
               </div>
-              <div className="flex justify-between border-t border-line pt-2 text-[15px]">
+              <div className="flex justify-between border-t border-cream-300 pt-2 text-[15px]">
                 <dt className="font-medium">Total</dt>
                 <dd className="mono">{formatMoney(order.total, order.currency)}</dd>
               </div>
             </dl>
-            <p className="mt-3 text-[11.5px] text-muted">
+            <p className="mt-3 text-[11.5px] text-slate-muted">
               {order.payment.provider === "test"
                 ? "Test payment used. No money moved."
                 : `Paid with ${order.payment.provider}.`}

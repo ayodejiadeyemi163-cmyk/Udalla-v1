@@ -85,7 +85,7 @@ export default async function StartOrderPage({
   const demo = isDemoMode();
 
   return (
-    <div className="bg-ivory">
+    <div className="bg-cream-100">
       <div className="wrap py-8 md:py-10">
         <Breadcrumbs
           items={[
@@ -107,7 +107,7 @@ export default async function StartOrderPage({
             <p className="mono text-[24px]" aria-live="polite">
               {formatMoney(totals.total, entry.currency)}
             </p>
-            <p className="text-[11px] text-muted">Draft saved on this device</p>
+            <p className="text-[11px] text-slate-muted">Draft saved on this device</p>
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export default async function StartOrderPage({
         </div>
 
         {query.error ? (
-          <p className="mt-5 rounded-[10px] bg-clay/10 px-3 py-2 text-[13px] text-clay">
+          <p className="mt-5 rounded-[10px] bg-danger-100 px-3 py-2 text-[13px] text-danger-600">
             {query.error}
           </p>
         ) : null}
@@ -126,7 +126,7 @@ export default async function StartOrderPage({
             {step === 1 ? (
               <div>
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">Choose your package</h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   The total updates as you choose. Government fees stay separate and at cost.
                 </p>
                 <div className="mt-5">
@@ -164,7 +164,7 @@ export default async function StartOrderPage({
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">
                   Business details
                 </h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   Exactly as they should appear on the registry record.
                 </p>
 
@@ -203,7 +203,7 @@ export default async function StartOrderPage({
                         </div>
                       ))}
                     </div>
-                    <p className="mt-2 text-[11.5px] text-muted">
+                    <p className="mt-2 text-[11.5px] text-slate-muted">
                       We file the first name that clears the registry search.
                     </p>
                   </fieldset>
@@ -233,7 +233,7 @@ export default async function StartOrderPage({
                       required
                     />
                     {entry.shareCapital ? (
-                      <p className="mt-1 text-[11.5px] text-muted">
+                      <p className="mt-1 text-[11.5px] text-slate-muted">
                         You can add a registered office later if you chose Premium.
                       </p>
                     ) : null}
@@ -252,7 +252,7 @@ export default async function StartOrderPage({
                         defaultValue={draft.business.shareCapital}
                         placeholder="1000000"
                       />
-                      <p className="mt-1 text-[11.5px] text-muted">
+                      <p className="mt-1 text-[11.5px] text-slate-muted">
                         Amount in {entry.currency === "NGN" ? "naira" : entry.currency === "GBP" ? "pounds" : "dollars"}. The government fee can change with share capital.
                       </p>
                     </div>
@@ -263,7 +263,7 @@ export default async function StartOrderPage({
                   <button type="submit" className="btn btn-primary">
                     Continue to people
                   </button>
-                  <Link href={`${basePath}?step=1`} className="text-[13px] text-ink/60 hover:text-ink">
+                  <Link href={`${basePath}?step=1`} className="text-[13px] text-slate-muted hover:text-navy-950">
                     Back to package
                   </Link>
                 </div>
@@ -273,7 +273,7 @@ export default async function StartOrderPage({
             {step === 3 ? (
               <div>
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">People</h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   Directors, shareholders, members or trustees. Ownership must total 100
                   percent.
                 </p>
@@ -290,7 +290,7 @@ export default async function StartOrderPage({
             {step === 4 ? (
               <div>
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">Documents</h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   Private storage only. Nothing is public.
                 </p>
                 <div className="mt-5">
@@ -308,7 +308,7 @@ export default async function StartOrderPage({
             {step === 5 ? (
               <div>
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">Review</h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   Check everything before payment. You can go back to any step.
                 </p>
 
@@ -316,7 +316,7 @@ export default async function StartOrderPage({
                   <section className="card p-5">
                     <div className="flex items-center justify-between">
                       <p className="eyebrow">Package</p>
-                      <Link href={`${basePath}?step=1`} className="text-[12px] text-forest hover:underline">
+                      <Link href={`${basePath}?step=1`} className="text-[12px] text-navy-900 hover:underline">
                         Edit
                       </Link>
                     </div>
@@ -331,31 +331,31 @@ export default async function StartOrderPage({
                   <section className="card p-5">
                     <div className="flex items-center justify-between">
                       <p className="eyebrow">Business</p>
-                      <Link href={`${basePath}?step=2`} className="text-[12px] text-forest hover:underline">
+                      <Link href={`${basePath}?step=2`} className="text-[12px] text-navy-900 hover:underline">
                         Edit
                       </Link>
                     </div>
                     <dl className="mt-3 space-y-1.5 text-[13px]">
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-muted">Names:</dt>
+                        <dt className="text-slate-muted">Names:</dt>
                         <dd>{draft.business.proposedNames.join(" / ") || "Not added"}</dd>
                       </div>
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-muted">{entry.activityLabel}:</dt>
+                        <dt className="text-slate-muted">{entry.activityLabel}:</dt>
                         <dd>{draft.business.activity || "Not added"}</dd>
                       </div>
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-muted">Address:</dt>
+                        <dt className="text-slate-muted">Address:</dt>
                         <dd>{draft.business.address || "Not added"}</dd>
                       </div>
                       {entry.shareCapital && draft.business.shareCapital ? (
                         <div className="flex flex-wrap gap-x-2">
-                          <dt className="text-muted">Share capital:</dt>
+                          <dt className="text-slate-muted">Share capital:</dt>
                           <dd className="mono">{draft.business.shareCapital}</dd>
                         </div>
                       ) : null}
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-muted">Updates:</dt>
+                        <dt className="text-slate-muted">Updates:</dt>
                         <dd>{draft.contactEmail || "Not added"}</dd>
                       </div>
                     </dl>
@@ -364,19 +364,19 @@ export default async function StartOrderPage({
                   <section className="card p-5">
                     <div className="flex items-center justify-between">
                       <p className="eyebrow">People</p>
-                      <Link href={`${basePath}?step=3`} className="text-[12px] text-forest hover:underline">
+                      <Link href={`${basePath}?step=3`} className="text-[12px] text-navy-900 hover:underline">
                         Edit
                       </Link>
                     </div>
                     {draft.people.length === 0 ? (
-                      <p className="mt-2 text-[13px] text-clay">No people added yet.</p>
+                      <p className="mt-2 text-[13px] text-danger-600">No people added yet.</p>
                     ) : (
-                      <ul className="mt-3 divide-y divide-line">
+                      <ul className="mt-3 divide-y divide-cream-300">
                         {draft.people.map((person) => (
                           <li key={person.id} className="flex items-center justify-between gap-3 py-2 text-[13px]">
                             <span>
                               {person.name}{" "}
-                              <span className="text-muted">({person.role})</span>
+                              <span className="text-slate-muted">({person.role})</span>
                             </span>
                             <span className="mono text-[12px]">{person.ownership}%</span>
                           </li>
@@ -388,11 +388,11 @@ export default async function StartOrderPage({
                   <section className="card p-5">
                     <div className="flex items-center justify-between">
                       <p className="eyebrow">Documents</p>
-                      <Link href={`${basePath}?step=4`} className="text-[12px] text-forest hover:underline">
+                      <Link href={`${basePath}?step=4`} className="text-[12px] text-navy-900 hover:underline">
                         Edit
                       </Link>
                     </div>
-                    <p className="mt-2 text-[13px] text-ink/70">
+                    <p className="mt-2 text-[13px] text-navy-950/70">
                       {draft.documents.length > 0
                         ? `${draft.documents.length} file(s) uploaded.`
                         : demo
@@ -404,8 +404,8 @@ export default async function StartOrderPage({
 
                 <form action={saveReviewStep} className="mt-6">
                   <input type="hidden" name="draftId" value={draft.id} />
-                  <label className="flex items-start gap-3 text-[13px] leading-relaxed text-ink/80">
-                    <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 flex-none accent-forest" />
+                  <label className="flex items-start gap-3 text-[13px] leading-relaxed text-navy-950/80">
+                    <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 flex-none accent-navy-900" />
                     <span>
                       I confirm the information is accurate and I agree to the{" "}
                       <Link href="/terms" className="link-quiet">
@@ -429,7 +429,7 @@ export default async function StartOrderPage({
             {step === 6 ? (
               <div>
                 <h2 className="font-display text-[24px] tracking-[-0.02em]">Payment</h2>
-                <p className="mt-1 text-[13.5px] text-ink/70">
+                <p className="mt-1 text-[13.5px] text-navy-950/70">
                   {demo
                     ? "This preview runs with demo data. A test payment creates the order and charges nothing."
                     : "Pay securely. Your order begins as soon as payment is confirmed."}
@@ -438,29 +438,29 @@ export default async function StartOrderPage({
                 <div className="card mt-5 p-5 md:p-6">
                   <dl className="space-y-2 text-[13.5px]">
                     <div className="flex justify-between">
-                      <dt className="text-ink/70">{selectedPackage?.name ?? "Package"}</dt>
+                      <dt className="text-navy-950/70">{selectedPackage?.name ?? "Package"}</dt>
                       <dd className="mono">{formatMoney(totals.packagePrice, entry.currency)}</dd>
                     </div>
                     {totals.addOnsTotal > 0 ? (
                       <div className="flex justify-between">
-                        <dt className="text-ink/70">Add-ons</dt>
+                        <dt className="text-navy-950/70">Add-ons</dt>
                         <dd className="mono">{formatMoney(totals.addOnsTotal, entry.currency)}</dd>
                       </div>
                     ) : null}
                     <div className="flex justify-between">
-                      <dt className="text-ink/70">{entry.governmentFeeLabel}</dt>
+                      <dt className="text-navy-950/70">{entry.governmentFeeLabel}</dt>
                       <dd className="mono">
                         {entry.governmentFeeWaived
                           ? "Waived"
                           : formatMoney(totals.governmentFee, entry.currency)}
                       </dd>
                     </div>
-                    <div className="flex justify-between border-t border-line pt-3 text-[16px]">
+                    <div className="flex justify-between border-t border-cream-300 pt-3 text-[16px]">
                       <dt className="font-medium">Total</dt>
                       <dd className="mono text-[20px]">{formatMoney(totals.total, entry.currency)}</dd>
                     </div>
                   </dl>
-                  <p className="mt-3 text-[11.5px] leading-relaxed text-muted">{priceNote}</p>
+                  <p className="mt-3 text-[11.5px] leading-relaxed text-slate-muted">{priceNote}</p>
                 </div>
 
                 <div className="mt-5 space-y-3">
@@ -470,7 +470,7 @@ export default async function StartOrderPage({
                       <button type="submit" className="btn btn-primary w-full">
                         Test payment, no live gateway keys
                       </button>
-                      <p className="mt-2 text-[11.5px] text-muted">
+                      <p className="mt-2 text-[11.5px] text-slate-muted">
                         Clearly labelled test payment. No money moves. The order is created so
                         you can see the dashboard.
                       </p>
@@ -484,12 +484,12 @@ export default async function StartOrderPage({
                     </form>
                   )}
 
-                  <div className="flex items-center gap-2 text-[11.5px] text-muted">
+                  <div className="flex items-center gap-2 text-[11.5px] text-slate-muted">
                     <Lock /> Card details are handled by the payment provider. We never see them.
                   </div>
                 </div>
 
-                <Link href={`${basePath}?step=5`} className="mt-5 inline-block text-[13px] text-ink/60 hover:text-ink">
+                <Link href={`${basePath}?step=5`} className="mt-5 inline-block text-[13px] text-slate-muted hover:text-navy-950">
                   Back to review
                 </Link>
               </div>
@@ -500,32 +500,32 @@ export default async function StartOrderPage({
             <div className="card p-5 lg:sticky lg:top-28">
               <p className="eyebrow">Order summary</p>
               <p className="mt-2 font-display text-[19px] tracking-[-0.02em]">{entry.name}</p>
-              <p className="text-[12px] text-muted">{entry.processing}</p>
-              <dl className="mt-4 space-y-1.5 border-t border-line pt-4 text-[12.5px]">
+              <p className="text-[12px] text-slate-muted">{entry.processing}</p>
+              <dl className="mt-4 space-y-1.5 border-t border-cream-300 pt-4 text-[12.5px]">
                 <div className="flex justify-between">
-                  <dt className="text-ink/70">Package</dt>
+                  <dt className="text-navy-950/70">Package</dt>
                   <dd>{selectedPackage?.name ?? "Not chosen"}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-ink/70">Government fee</dt>
+                  <dt className="text-navy-950/70">Government fee</dt>
                   <dd className="mono">
                     {entry.governmentFeeWaived
                       ? "Waived"
                       : formatMoney(totals.governmentFee, entry.currency)}
                   </dd>
                 </div>
-                <div className="flex justify-between border-t border-line pt-2 text-[14px]">
+                <div className="flex justify-between border-t border-cream-300 pt-2 text-[14px]">
                   <dt className="font-medium">Total</dt>
                   <dd className="mono">{formatMoney(totals.total, entry.currency)}</dd>
                 </div>
               </dl>
-              <p className="mt-3 text-[11px] leading-relaxed text-muted">
+              <p className="mt-3 text-[11px] leading-relaxed text-slate-muted">
                 Draft saved automatically. Close this page and come back on the same device to
                 continue.
               </p>
               <a
                 href={contact.whatsappHref}
-                className="mt-4 inline-block text-[12.5px] font-medium text-forest hover:underline"
+                className="mt-4 inline-block text-[12.5px] font-medium text-navy-900 hover:underline"
               >
                 Need help? Message the team
               </a>

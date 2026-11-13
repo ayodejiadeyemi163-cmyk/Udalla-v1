@@ -72,10 +72,10 @@ export default async function PricingPage() {
         title="The price you see is the price you pay."
         intro="Three packages per service. Government fees are separate and shown at cost, because the registries set them, not us."
       >
-        <p className="mt-6 max-w-2xl text-[13px] text-ink/65">{priceNote}</p>
+        <p className="mt-6 max-w-2xl text-[13px] text-navy-950/65">{priceNote}</p>
       </PageHero>
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Pricing" }]} />
 
@@ -87,19 +87,19 @@ export default async function PricingPage() {
                 <article
                   key={tier}
                   className={`relative flex flex-col rounded-[16px] border p-6 ${
-                    highlighted ? "border-forest bg-ivory shadow-lift" : "border-line bg-ivory/50"
+                    highlighted ? "border-navy-900 bg-cream-100 shadow-lift" : "border-cream-300 bg-cream-100/50"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
                     <h2 className="font-display text-[24px] tracking-[-0.03em]">{copy.name}</h2>
                     {copy.badge ? (
-                      <span className={`pill ${highlighted ? "pill-marigold" : "pill-forest"}`}>
+                      <span className={`pill ${highlighted ? "pill-emerald" : "pill-emerald-soft"}`}>
                         {copy.badge}
                       </span>
                     ) : null}
                   </div>
-                  <p className="mt-3 text-[14px] leading-relaxed text-ink/70">{copy.summary}</p>
-                  <div className="mt-5 border-t border-line pt-4">
+                  <p className="mt-3 text-[14px] leading-relaxed text-navy-950/70">{copy.summary}</p>
+                  <div className="mt-5 border-t border-cream-300 pt-4">
                     <p className="eyebrow">From</p>
                     <div className="mt-1 space-y-0.5">
                       {CURRENCIES.map((currency) => (
@@ -111,8 +111,8 @@ export default async function PricingPage() {
                   </div>
                   <ul className="mt-5 flex-1 space-y-2">
                     {FEATURE_ROWS.filter((row) => row.tiers.includes(tier)).slice(0, 6).map((row) => (
-                      <li key={row.label} className="flex gap-2 text-[12.5px] leading-snug text-ink/75">
-                        <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-forest" />
+                      <li key={row.label} className="flex gap-2 text-[12.5px] leading-snug text-navy-950/75">
+                        <Check className="mt-0.5 h-3.5 w-3.5 flex-none text-navy-900" />
                         {row.label}
                       </li>
                     ))}
@@ -132,8 +132,7 @@ export default async function PricingPage() {
             <h2 className="display text-[clamp(1.8rem,1.4rem+1.6vw,2.6rem)]">
               Every service, every package
             </h2>
-            <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-ink/70">
-              Grouped by country. Government fees sit in their own column, at cost.
+            <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-navy-950/70">
             </p>
 
             <div className="mt-8 space-y-10">
@@ -144,7 +143,7 @@ export default async function PricingPage() {
                 return (
                   <div key={country.slug}>
                     <div className="mb-3 flex items-center gap-2">
-                      <CountryMark mark={country.mark} className="h-4 w-4 text-forest" />
+                      <CountryMark mark={country.mark} className="h-4 w-4 text-navy-900" />
                       <h3 className="font-display text-[21px] tracking-[-0.025em]">
                         {country.name}
                       </h3>
@@ -152,34 +151,34 @@ export default async function PricingPage() {
                     <div className="-mx-1 overflow-x-auto px-1">
                       <table className="w-full min-w-[640px] border-collapse text-left">
                         <thead>
-                          <tr className="border-y border-line">
-                            <th className="py-3 pr-4 text-[11px] uppercase tracking-[0.12em] text-muted">
+                          <tr className="border-y border-cream-300">
+                            <th className="py-3 pr-4 text-[11px] uppercase tracking-[0.12em] text-slate-muted">
                               Service
                             </th>
                             {packageOrder.map((tier) => (
                               <th
                                 key={tier}
-                                className="px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-muted"
+                                className="px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-slate-muted"
                               >
                                 {PACKAGE_COPY[tier].name}
                               </th>
                             ))}
-                            <th className="px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-muted">
+                            <th className="px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-slate-muted">
                               Government fee
                             </th>
                           </tr>
                         </thead>
                         <tbody>
                           {services.map((service) => (
-                            <tr key={service.slug} className="border-b border-line">
+                            <tr key={service.slug} className="border-b border-cream-300">
                               <td className="py-4 pr-4">
                                 <Link
                                   href={`/services/${service.country}/${service.slug}`}
-                                  className="text-[13.5px] font-medium hover:text-forest"
+                                  className="text-[13.5px] font-medium hover:text-navy-900"
                                 >
                                   {service.name}
                                 </Link>
-                                <p className="mono mt-0.5 text-[11px] text-muted">
+                                <p className="mono mt-0.5 text-[11px] text-slate-muted">
                                   {service.processing}
                                 </p>
                               </td>
@@ -193,7 +192,7 @@ export default async function PricingPage() {
                               })}
                               <td className="mono px-3 py-4 text-[13px]">
                                 {service.governmentFeeWaived ? (
-                                  <span className="text-forest">Waived</span>
+                                  <span className="text-navy-900">Waived</span>
                                 ) : (
                                   <>
                                     {service.governmentFeeFrom ? "from " : ""}
@@ -219,14 +218,14 @@ export default async function PricingPage() {
             <div className="mt-6 -mx-1 overflow-x-auto px-1">
               <table className="w-full min-w-[620px] border-collapse text-left">
                 <thead>
-                  <tr className="border-y border-line">
-                    <th className="py-3 pr-4 text-[11px] uppercase tracking-[0.12em] text-muted">
+                  <tr className="border-y border-cream-300">
+                    <th className="py-3 pr-4 text-[11px] uppercase tracking-[0.12em] text-slate-muted">
                       Included
                     </th>
                     {packageOrder.map((tier) => (
                       <th
                         key={tier}
-                        className="w-28 px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-muted"
+                        className="w-28 px-3 py-3 text-[11px] uppercase tracking-[0.12em] text-slate-muted"
                       >
                         {PACKAGE_COPY[tier].name}
                       </th>
@@ -235,14 +234,14 @@ export default async function PricingPage() {
                 </thead>
                 <tbody>
                   {FEATURE_ROWS.map((row) => (
-                    <tr key={row.label} className="border-b border-line">
-                      <td className="py-3 pr-4 text-[13px] text-ink/80">{row.label}</td>
+                    <tr key={row.label} className="border-b border-cream-300">
+                      <td className="py-3 pr-4 text-[13px] text-navy-950/80">{row.label}</td>
                       {packageOrder.map((tier) => (
                         <td key={tier} className="px-3 py-3">
                           {row.tiers.includes(tier) ? (
-                            <Check className="h-4 w-4 text-forest" />
+                            <Check className="h-4 w-4 text-navy-900" />
                           ) : (
-                            <span className="text-[13px] text-muted">Not included</span>
+                            <span className="text-[13px] text-slate-muted">Not included</span>
                           )}
                         </td>
                       ))}
@@ -255,7 +254,7 @@ export default async function PricingPage() {
 
           <div className="card mt-12 p-6 md:p-8">
             <h2 className="font-display text-[22px] tracking-[-0.025em]">Compliance after registration</h2>
-            <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-ink/70">
+            <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-navy-950/70">
               Yearly and one-off compliance services are priced separately. They are invoiced
               and reminded, never charged automatically.
             </p>
@@ -264,7 +263,7 @@ export default async function PricingPage() {
             </Link>
           </div>
 
-          <p className="mt-8 max-w-3xl text-[12px] text-muted">{priceNote}</p>
+          <p className="mt-8 max-w-3xl text-[12px] text-slate-muted">{priceNote}</p>
         </div>
       </section>
 

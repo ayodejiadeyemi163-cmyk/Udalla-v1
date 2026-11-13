@@ -13,15 +13,15 @@ export default async function AdminContentPage({
   return (
     <div className="space-y-8">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">Saved.</p>
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">Saved.</p>
       ) : null}
 
       <section>
         <h2 className="font-display text-[22px] tracking-[-0.02em]">FAQ</h2>
-        <p className="mt-1 text-[12.5px] text-muted">
+        <p className="mt-1 text-[12.5px] text-slate-muted">
           The first six questions appear on the home page. All of them appear on the FAQ page.
         </p>
 
@@ -44,7 +44,7 @@ export default async function AdminContentPage({
                 />
                 <div className="flex items-end gap-2">
                   <label>
-                    <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">
+                    <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                       Order
                     </span>
                     <input
@@ -54,14 +54,14 @@ export default async function AdminContentPage({
                       className="field mono h-9 w-20 py-1 text-[12px]"
                     />
                   </label>
-                  <button type="submit" className="btn btn-forest h-9 px-3 text-[11.5px]">
+                  <button type="submit" className="btn btn-navy h-9 px-3 text-[11.5px]">
                     Save
                   </button>
                 </div>
               </form>
               <form action={deleteFaq} className="mt-2">
                 <input type="hidden" name="id" value={faq.id} />
-                <button type="submit" className="text-[11.5px] text-clay hover:underline">
+                <button type="submit" className="text-[11.5px] text-danger-600 hover:underline">
                   Delete this question
                 </button>
               </form>
@@ -75,7 +75,7 @@ export default async function AdminContentPage({
           <textarea name="answer" placeholder="Answer" className="field min-h-20 text-[13px]" required />
           <div className="flex items-end gap-2">
             <label>
-              <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-muted">
+              <span className="mb-1 block text-[10px] uppercase tracking-[0.1em] text-slate-muted">
                 Order
               </span>
               <input
@@ -94,14 +94,14 @@ export default async function AdminContentPage({
 
       <section>
         <h2 className="font-display text-[22px] tracking-[-0.02em]">Guides</h2>
-        <p className="mt-1 text-[12.5px] text-muted">
+        <p className="mt-1 text-[12.5px] text-slate-muted">
           Separate paragraphs with a blank line. Start a heading with two hash marks.
         </p>
         <div className="mt-4 space-y-3">
           {guides.map((guide) => (
             <form key={guide.slug} action={saveGuide} className="card grid gap-2 p-4">
               <input type="hidden" name="slug" value={guide.slug} />
-              <p className="mono text-[10.5px] text-muted">
+              <p className="mono text-[10.5px] text-slate-muted">
                 {guide.slug} · {guide.country}
               </p>
               <input name="title" defaultValue={guide.title} className="field text-[13px]" aria-label="Title" />
@@ -117,7 +117,7 @@ export default async function AdminContentPage({
                 className="field min-h-48 font-sans text-[13px]"
                 aria-label="Body"
               />
-              <button type="submit" className="btn btn-forest h-9 w-fit px-3 text-[11.5px]">
+              <button type="submit" className="btn btn-navy h-9 w-fit px-3 text-[11.5px]">
                 Save guide
               </button>
             </form>

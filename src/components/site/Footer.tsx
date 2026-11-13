@@ -48,28 +48,28 @@ export function Footer({
   ];
 
   return (
-    <footer className="border-t border-line bg-ivory paper-texture">
+    <footer className="border-t border-cream-300 bg-cream-100 surface-texture">
       <div className="wrap relative py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link href="/" className="font-display text-[30px] tracking-[-0.045em]">
               {brand.name}
             </Link>
-            <p className="mt-4 max-w-xs text-[14.5px] leading-relaxed text-ink/70">
+            <p className="mt-4 max-w-xs text-[14.5px] leading-relaxed text-navy-950/70">
               Business registration and compliance in Nigeria, the United Kingdom and the
               United States.
             </p>
             <div className="mt-6 space-y-1.5 text-[14px]">
-              <a href={`mailto:${contact.email}`} className="block text-forest hover:underline">
+              <a href={`mailto:${contact.email}`} className="block text-navy-900 hover:underline">
                 {contact.email}
               </a>
-              <a href={contact.phoneHref} className="mono block text-ink/80">
+              <a href={contact.phoneHref} className="mono block text-navy-950/80">
                 {contact.phone}
               </a>
-              <a href={contact.whatsappHref} className="block text-ink/80 hover:text-forest">
+              <a href={contact.whatsappHref} className="block text-navy-950/80 hover:text-navy-900">
                 WhatsApp {contact.whatsappNumber}
               </a>
-              <p className="pt-1 text-[12.5px] text-muted">{contact.hours}</p>
+              <p className="pt-1 text-[12.5px] text-slate-muted">{contact.hours}</p>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ export function Footer({
                     <li key={link.href + link.label}>
                       <Link
                         href={link.href}
-                        className="text-[13.5px] leading-snug text-ink/75 hover:text-forest"
+                        className="text-[13.5px] leading-snug text-navy-950/75 hover:text-navy-900"
                       >
                         {link.label}
                       </Link>
@@ -94,20 +94,20 @@ export function Footer({
           </div>
         </div>
 
-        <div className="mt-14 border-t border-line pt-6">
+        <div className="mt-14 border-t border-cream-300 pt-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-[12.5px] text-ink/65">
-              <Link href="/privacy" className="hover:text-forest">Privacy</Link>
-              <Link href="/terms" className="hover:text-forest">Terms</Link>
-              <Link href="/cookies" className="hover:text-forest">Cookies</Link>
-              <Link href="/refunds" className="hover:text-forest">Refunds</Link>
-              <Link href="/disclaimer" className="hover:text-forest">Disclaimer</Link>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-[12.5px] text-navy-950/65">
+              <Link href="/privacy" className="hover:text-navy-900">Privacy</Link>
+              <Link href="/terms" className="hover:text-navy-900">Terms</Link>
+              <Link href="/cookies" className="hover:text-navy-900">Cookies</Link>
+              <Link href="/refunds" className="hover:text-navy-900">Refunds</Link>
+              <Link href="/disclaimer" className="hover:text-navy-900">Disclaimer</Link>
             </div>
-            <p className="text-[12px] text-muted">
+            <p className="text-[12px] text-slate-muted">
               &copy; {new Date().getFullYear()} {brand.legalName}. All rights reserved.
             </p>
           </div>
-          <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-muted">
+          <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-slate-muted">
             {contact.notLawFirm} {brand.filingNote}
           </p>
         </div>

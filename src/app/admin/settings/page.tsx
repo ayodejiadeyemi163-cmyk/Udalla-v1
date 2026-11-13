@@ -14,15 +14,15 @@ export default async function AdminSettingsPage({
   return (
     <div className="max-w-2xl space-y-5">
       {params.error ? (
-        <p className="rounded-[10px] bg-clay/10 px-3 py-2 text-[12.5px] text-clay">{params.error}</p>
+        <p className="rounded-[10px] bg-danger-100 px-3 py-2 text-[12.5px] text-danger-600">{params.error}</p>
       ) : null}
       {params.saved ? (
-        <p className="rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">Saved.</p>
+        <p className="rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">Saved.</p>
       ) : null}
 
       <div>
         <h2 className="font-display text-[22px] tracking-[-0.02em]">Contact details</h2>
-        <p className="mt-1 text-[12.5px] leading-relaxed text-muted">
+        <p className="mt-1 text-[12.5px] leading-relaxed text-slate-muted">
           These override the defaults in the brand config. Brand name, legal name and domain
           live only in the config file.
         </p>
@@ -83,19 +83,19 @@ export default async function AdminSettingsPage({
         <p className="eyebrow">Fixed in the brand config</p>
         <dl className="mt-3 space-y-1.5 text-[13px]">
           <div className="flex justify-between gap-4">
-            <dt className="text-muted">Brand</dt>
+            <dt className="text-slate-muted">Brand</dt>
             <dd>{brand.name}</dd>
           </div>
           <div className="flex justify-between gap-4">
-            <dt className="text-muted">Legal name</dt>
+            <dt className="text-slate-muted">Legal name</dt>
             <dd>{brand.legalName}</dd>
           </div>
           <div className="flex justify-between gap-4">
-            <dt className="text-muted">Domain</dt>
+            <dt className="text-slate-muted">Domain</dt>
             <dd>{brand.domain}</dd>
           </div>
           <div className="flex justify-between gap-4">
-            <dt className="text-muted">Hours</dt>
+            <dt className="text-slate-muted">Hours</dt>
             <dd className="text-right">{brand.hours}</dd>
           </div>
         </dl>

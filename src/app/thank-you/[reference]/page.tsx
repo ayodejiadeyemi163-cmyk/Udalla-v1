@@ -34,13 +34,13 @@ export default async function ThankYouPage({
   const isOwner = Boolean(user && order.userId && user.id === order.userId);
 
   return (
-    <section className="bg-ivory paper-texture">
+    <section className="bg-cream-100 surface-texture">
       <div className="wrap relative py-14 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <div className="relative mx-auto h-24 w-24">
-            <Stamp className="h-24 w-24 text-forest" />
+            <Stamp className="h-24 w-24 text-navy-900" />
             <span className="absolute inset-0 grid place-items-center">
-              <span className="step-enter grid h-10 w-10 place-items-center rounded-full bg-marigold text-ink">
+              <span className="step-enter grid h-10 w-10 place-items-center rounded-full bg-emerald-600 text-cream-50">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path
                     d="m4 10 4 4 8-9"
@@ -58,12 +58,12 @@ export default async function ThankYouPage({
           <h1 className="display mt-3 text-[clamp(2.2rem,1.8rem+2.6vw,3.6rem)]">
             Your filing is in our hands.
           </h1>
-          <p className="mt-4 text-[15.5px] leading-relaxed text-ink/70">
+          <p className="mt-4 text-[15.5px] leading-relaxed text-navy-950/70">
             A receipt is on its way to the email on the order. Every stage appears in your
             dashboard, and we message you if the registry asks for anything.
           </p>
 
-          <div className="mx-auto mt-7 inline-flex flex-col items-center rounded-[14px] border border-line bg-paper px-6 py-4">
+          <div className="mx-auto mt-7 inline-flex flex-col items-center rounded-[14px] border border-cream-300 bg-cream-50 px-6 py-4">
             <span className="eyebrow">Reference</span>
             <span className="mono mt-1 text-[22px] tracking-[-0.02em]">{order.reference}</span>
           </div>
@@ -77,25 +77,25 @@ export default async function ThankYouPage({
                 <p className="mt-2 font-display text-[21px] tracking-[-0.02em]">
                   {service?.name ?? order.service}
                 </p>
-                <p className="text-[12.5px] text-muted">{country?.name}</p>
+                <p className="text-[12.5px] text-slate-muted">{country?.name}</p>
               </div>
-              <span className="pill pill-forest">Received</span>
+              <span className="pill pill-emerald-soft">Received</span>
             </div>
-            <dl className="mt-4 space-y-1.5 border-t border-line pt-4 text-[13px]">
+            <dl className="mt-4 space-y-1.5 border-t border-cream-300 pt-4 text-[13px]">
               <div className="flex justify-between">
-                <dt className="text-ink/70">Package</dt>
+                <dt className="text-navy-950/70">Package</dt>
                 <dd className="capitalize">{order.packageTier}</dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-ink/70">Government fee</dt>
+                <dt className="text-navy-950/70">Government fee</dt>
                 <dd className="mono">{formatMoney(order.governmentFee, order.currency)}</dd>
               </div>
-              <div className="flex justify-between border-t border-line pt-2 text-[15px]">
+              <div className="flex justify-between border-t border-cream-300 pt-2 text-[15px]">
                 <dt className="font-medium">Paid</dt>
                 <dd className="mono">{formatMoney(order.total, order.currency)}</dd>
               </div>
             </dl>
-            <p className="mt-3 text-[11.5px] text-muted">
+            <p className="mt-3 text-[11.5px] text-slate-muted">
               {order.payment.provider === "test"
                 ? "Test payment. No money moved and no live gateway keys are configured."
                 : "Payment confirmed by the provider."}
@@ -122,10 +122,10 @@ export default async function ThankYouPage({
               <ArrowRight />
             </Link>
           )}
-          <Link href="/guides" className="text-[13px] text-forest hover:underline">
+          <Link href="/guides" className="text-[13px] text-navy-900 hover:underline">
             Read a guide while you wait
           </Link>
-          <p className="max-w-lg pt-2 text-center text-[11.5px] leading-relaxed text-muted">
+          <p className="max-w-lg pt-2 text-center text-[11.5px] leading-relaxed text-slate-muted">
             {brand.filingNote} {brand.notLawFirm}
           </p>
         </div>

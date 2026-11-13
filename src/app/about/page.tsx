@@ -29,7 +29,7 @@ export default async function AboutPage() {
         intro={`${brand.legalName} runs filings in three countries through one dashboard. You always know the price, the stage and the next date that matters.`}
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream-50">
         <div className="wrap py-12 md:py-16">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "About" }]} />
 
@@ -87,11 +87,11 @@ export default async function AboutPage() {
                 ))}
               </div>
 
-              <div className="mt-10 border-t border-line pt-6">
+              <div className="mt-10 border-t border-cream-300 pt-6">
                 <p className="eyebrow">Proof points</p>
                 <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-2">
                   {brand.proofPoints.map((point) => (
-                    <li key={point} className="text-[14px] text-ink/75">
+                    <li key={point} className="text-[14px] text-navy-950/75">
                       {point}
                     </li>
                   ))}
@@ -101,14 +101,14 @@ export default async function AboutPage() {
 
             <aside className="lg:col-span-5">
               <div className="card overflow-hidden">
-                <div className="relative bg-forest p-7 text-ivory">
-                  <Stamp className="absolute -right-4 -top-4 h-28 w-28 text-marigold/40" />
-                  <p className="eyebrow text-ivory/60">In short</p>
+                <div className="relative bg-navy-900 p-7 text-cream-100">
+                  <Stamp className="absolute -right-4 -top-4 h-28 w-28 text-gold-500/40" />
+                  <p className="eyebrow text-cream-100/60">In short</p>
                   <p className="mt-4 font-display text-[26px] leading-[1.05] tracking-[-0.03em]">
                     One dashboard from first filing to yearly compliance.
                   </p>
                 </div>
-                <div className="divide-y divide-line">
+                <div className="divide-y divide-cream-300">
                   {[
                     { label: "Legal name", value: brand.legalName },
                     { label: "Domain", value: brand.domain },
@@ -117,7 +117,7 @@ export default async function AboutPage() {
                     { label: "Hours", value: contact.hours },
                   ].map((row) => (
                     <div key={row.label} className="flex items-start justify-between gap-4 px-6 py-4">
-                      <p className="text-[11px] uppercase tracking-[0.12em] text-muted">
+                      <p className="text-[11px] uppercase tracking-[0.12em] text-slate-muted">
                         {row.label}
                       </p>
                       <p className="max-w-[22ch] text-right text-[13px]">{row.value}</p>
@@ -126,9 +126,9 @@ export default async function AboutPage() {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-[14px] border border-line p-5">
+              <div className="mt-4 rounded-[14px] border border-cream-300 p-5">
                 <p className="eyebrow">Not a law firm</p>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-ink/70">
+                <p className="mt-2 text-[12.5px] leading-relaxed text-navy-950/70">
                   {contact.notLawFirm}
                 </p>
                 <Link href="/disclaimer" className="link-quiet mt-2 inline-block text-[12.5px]">
@@ -138,12 +138,12 @@ export default async function AboutPage() {
             </aside>
           </div>
 
-          <div className="mt-14 border-t border-line pt-10">
+          <div className="mt-14 border-t border-cream-300 pt-10">
             <p className="eyebrow">Partner lawyers</p>
             <h2 className="display mt-3 text-[clamp(2rem,1.5rem+2vw,3.2rem)]">
               {brand.lawyerSectionTitle}
             </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/75">
+            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-navy-950/75">
               {contact.lawyerNote}
             </p>
             <div className="mt-6">

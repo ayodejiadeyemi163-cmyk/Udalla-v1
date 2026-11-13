@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
 import { CookieBanner } from "@/components/site/CookieBanner";
@@ -19,9 +19,9 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const instrument = Instrument_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -32,7 +32,7 @@ const plex = IBM_Plex_Mono({
   display: "swap",
 });
 
-const fonts = `${fraunces.variable} ${instrument.variable} ${plex.variable}`;
+const fonts = `${fraunces.variable} ${manrope.variable} ${plex.variable}`;
 
 /**
  * Every route is server rendered. The shell reads admin editable settings and
@@ -93,7 +93,7 @@ export default async function RootLayout({
       <body className={`${fonts} font-sans`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-ivory"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-navy-950 focus:px-4 focus:py-2 focus:text-cream-100"
         >
           Skip to content
         </a>

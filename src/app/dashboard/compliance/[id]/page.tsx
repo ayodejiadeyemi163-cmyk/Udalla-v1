@@ -39,23 +39,23 @@ export default async function MatterDetailPage({
 
   return (
     <div>
-      <Link href="/dashboard/compliance" className="text-[12.5px] text-forest hover:underline">
+      <Link href="/dashboard/compliance" className="text-[12.5px] text-navy-900 hover:underline">
         &larr; Compliance
       </Link>
 
       {query.created ? (
-        <p className="mt-4 rounded-[10px] bg-forest/10 px-3 py-2 text-[12.5px] text-forest">
+        <p className="mt-4 rounded-[10px] bg-navy-900/10 px-3 py-2 text-[12.5px] text-navy-900">
           Request received. The lawyer has been notified and will reply in this thread.
         </p>
       ) : null}
 
       <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="mono text-[12px] text-muted">{matter.reference}</p>
+          <p className="mono text-[12px] text-slate-muted">{matter.reference}</p>
           <h1 className="display mt-1 text-[clamp(1.8rem,1.4rem+1.6vw,2.5rem)]">
             {matter.serviceName}
           </h1>
-          <p className="mt-1 text-[13px] text-muted">
+          <p className="mt-1 text-[13px] text-slate-muted">
             Opened {new Date(matter.createdAt).toLocaleDateString("en-GB")}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default async function MatterDetailPage({
         <div className="space-y-5 lg:col-span-7">
           <section className="card p-6">
             <h2 className="font-display text-[20px] tracking-[-0.02em]">Your request</h2>
-            <p className="mt-3 whitespace-pre-line text-[13.5px] leading-relaxed text-ink/80">
+            <p className="mt-3 whitespace-pre-line text-[13.5px] leading-relaxed text-navy-950/80">
               {matter.detail}
             </p>
           </section>
@@ -81,7 +81,7 @@ export default async function MatterDetailPage({
                   </span>
                   <div>
                     <p className="text-[13.5px] capitalize">{entry.status.replace("-", " ")}</p>
-                    <p className="mono text-[11px] text-muted">
+                    <p className="mono text-[11px] text-slate-muted">
                       {new Date(entry.at).toLocaleDateString("en-GB")}
                       {entry.note ? ` · ${entry.note}` : ""}
                     </p>
@@ -97,7 +97,7 @@ export default async function MatterDetailPage({
                   <span
                     key={status}
                     className={`h-1 flex-1 rounded-full ${
-                      stepIndex <= index ? "bg-forest" : "bg-line"
+                      stepIndex <= index ? "bg-navy-900" : "bg-cream-300"
                     }`}
                   />
                 );
@@ -123,20 +123,20 @@ export default async function MatterDetailPage({
           <div className="card p-6">
             <p className="eyebrow">Lawyer</p>
             <p className="mt-2 font-display text-[18px] tracking-[-0.02em]">{lawyerLabel}</p>
-            <p className="mt-1 text-[12px] text-muted">
+            <p className="mt-1 text-[12px] text-slate-muted">
               Independent, licensed practitioner. Lawyers handle regulatory compliance, not
               registration filings.
             </p>
 
-            <dl className="mt-4 space-y-1.5 border-t border-line pt-4 text-[13px]">
+            <dl className="mt-4 space-y-1.5 border-t border-cream-300 pt-4 text-[13px]">
               <div className="flex justify-between">
-                <dt className="text-ink/70">Service fee</dt>
+                <dt className="text-navy-950/70">Service fee</dt>
                 <dd className="mono">
                   {matter.price === null ? "By quote" : formatMoney(matter.price, matter.currency)}
                 </dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-ink/70">Deadline</dt>
+                <dt className="text-navy-950/70">Deadline</dt>
                 <dd className="mono">
                   {matter.deadline
                     ? `${matter.deadline} (${daysUntil(matter.deadline)}d)`
@@ -144,7 +144,7 @@ export default async function MatterDetailPage({
                 </dd>
               </div>
             </dl>
-            <p className="mt-3 text-[11.5px] leading-relaxed text-muted">
+            <p className="mt-3 text-[11.5px] leading-relaxed text-slate-muted">
               Government fees are confirmed in this thread before filing. Nothing is charged
               automatically.
             </p>
