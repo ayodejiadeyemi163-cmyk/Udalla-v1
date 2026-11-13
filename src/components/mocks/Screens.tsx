@@ -36,7 +36,7 @@ export function OrderTrackerMock({ compact = false }: { compact?: boolean }) {
                     step.state === "done"
                       ? "border-navy-900 bg-navy-900 text-cream-100"
                       : step.state === "current"
-                        ? "border-danger-600 bg-danger-100 text-danger-600"
+                        ? "border-emerald-600 bg-emerald-50 text-emerald-700"
                         : "border-cream-300 text-slate-muted"
                   }`}
                 >

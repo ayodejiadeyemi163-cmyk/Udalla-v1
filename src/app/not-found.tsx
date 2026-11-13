@@ -13,7 +13,7 @@ export default function NotFound() {
               This page moved, or never existed.
             </h1>
             <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-navy-950/70">
-              The link may be old. Everything below is still in the same place.
+              The link may be old.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/" className="btn btn-primary">

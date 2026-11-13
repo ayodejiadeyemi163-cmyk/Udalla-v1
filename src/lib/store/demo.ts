@@ -367,6 +367,9 @@ export function importDemoState(json: string): void {
   if (!parsed || !Array.isArray(parsed.users) || !parsed.settings) {
     throw new Error("Demo state is not readable");
   }
+  if (Array.isArray(parsed.lawyers)) {
+    parsed.lawyers = parsed.lawyers.filter((lawyer) => !lawyer.id.startsWith("law_demo"));
+  }
   globalStore.__udallaDemoDb = parsed;
 }
 
@@ -518,9 +521,11 @@ class DemoStore implements Store {
   }
 
   async listLawyers(approvedOnly = false) {
+    // Demo profiles are never shown as if they were real partner lawyers.
+    const real = this.data.lawyers.filter((lawyer) => !lawyer.id.startsWith("law_demo"));
     const list = approvedOnly
-      ? this.data.lawyers.filter((lawyer) => lawyer.approved)
-      : this.data.lawyers;
+      ? real.filter((lawyer) => lawyer.approved)
+      : real;
     return clone(list);
   }
 
