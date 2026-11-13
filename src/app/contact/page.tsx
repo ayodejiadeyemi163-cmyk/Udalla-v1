@@ -30,7 +30,7 @@ export default async function ContactPage({
     <>
       <PageHero
         eyebrow="Contact"
-        title="Talk to a person, not a bot."
+        title="Talk to the team directly."
         intro="Email, call or send a WhatsApp message. Every message reaches the team that prepares filings, and we reply within 24 hours, Monday to Saturday."
       />
 

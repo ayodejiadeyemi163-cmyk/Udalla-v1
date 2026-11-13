@@ -25,7 +25,7 @@ export default async function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="Registration should feel like a checklist, not a mystery."
+        title="Registration should feel like a checklist."
         intro={`${brand.legalName} runs filings in three countries through one dashboard. You always know the price, the stage and the next date that matters.`}
       />
 
