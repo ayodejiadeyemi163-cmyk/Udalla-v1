@@ -9,11 +9,8 @@ export default defineConfig([
     ".next/**",
     ".open-next/**",
     ".wrangler/**",
-    "freebuff-sites-build/**",
     "node_modules/**",
     "next-env.d.ts",
     "coverage/**",
-    "freebuff.open-next.config.ts",
-    "freebuff.wrangler.jsonc",
   ]),
 ]);

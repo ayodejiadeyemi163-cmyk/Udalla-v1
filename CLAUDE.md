@@ -52,7 +52,7 @@ npm run crawl https://your-host   # crawl every page
 - Do not invent reviews, awards, statistics, customer counts or lawyer names.
 - Do not use stock photos, AI faces or emoji in the interface.
 - Do not weaken authentication, RLS, upload validation or the consent checkbox to make a test pass.
-- Do not commit `.env` files, keys, generated build output or `freebuff.*` deployment artifacts.
+- Do not commit `.env` files, keys or generated build output.
 - Do not switch pages back to static rendering. The shell reads per request settings and the signed in user.
 
 ## Before you finish
