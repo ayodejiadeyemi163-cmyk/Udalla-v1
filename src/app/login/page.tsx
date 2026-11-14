@@ -11,7 +11,7 @@ import { safeNextPath } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Log in",
-  description: "Sign in to your Udalla dashboard with Google or an email link.",
+  description: "Sign in to your Udalla dashboard.",
   robots: { index: false, follow: false },
 };
 
@@ -55,7 +55,7 @@ export default async function LoginPage({
             <div>
               <p className="eyebrow text-cream-100/60">Your dashboard</p>
               <p className="mt-4 font-display text-[clamp(2rem,1.6rem+1.4vw,2.8rem)] leading-[1.02] tracking-[-0.03em]">
-                Every filing, deadline and document in one place.
+                Filings, deadlines and documents.
               </p>
               <p className="mt-5 max-w-sm text-[13.5px] leading-relaxed text-cream-100/65">
                 {brand.filingNote}
@@ -70,7 +70,7 @@ export default async function LoginPage({
         <div className="rounded-[18px] border border-cream-300 bg-cream-100 p-6 md:p-10 lg:col-span-7 lg:rounded-l-none">
           <p className="eyebrow">Log in</p>
           <h1 className="display mt-3 text-[clamp(2rem,1.6rem+1.6vw,3rem)]">
-            Sign in, no password to remember.
+            Log in
           </h1>
 
           {params.error ? (
@@ -92,31 +92,11 @@ export default async function LoginPage({
               </svg>
               Continue with Google
             </button>
-            {!hasSupabaseConfig() ? (
-              <p className="mt-2 text-[11.5px] text-slate-muted">
-                Google sign in needs Supabase keys. The demo accounts below work now.
-              </p>
-            ) : null}
           </form>
-
-          <div className="my-7 flex items-center gap-3">
-            <span className="h-px flex-1 bg-cream-300" />
-            <span className="mono text-[10.5px] uppercase tracking-[0.14em] text-slate-muted">or</span>
-            <span className="h-px flex-1 bg-cream-300" />
-          </div>
-
-          <h2 className="text-[14px] font-medium">Email magic link</h2>
           <MagicLinkForm disabled={!hasSupabaseConfig()} />
 
           {isDemoMode() ? (
             <div className="mt-8 border-t border-cream-300 pt-6">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="text-[14px] font-medium">Demo accounts</h2>
-                <span className="pill pill-emerald">Preview</span>
-              </div>
-              <p className="mt-1 text-[12px] text-slate-muted">
-                These sign in instantly and read the demo store. No real data is created.
-              </p>
               <div className="mt-4 grid gap-2">
                 {demoAccounts.map((account) => (
                   <form key={account.role} action={signInDemo}>
@@ -142,17 +122,7 @@ export default async function LoginPage({
             </div>
           ) : null}
 
-          <p className="mt-8 text-[11.5px] leading-relaxed text-slate-muted">
-            By signing in you agree to the{" "}
-            <Link href="/terms" className="link-quiet">
-              terms
-            </Link>{" "}
-            and the{" "}
-            <Link href="/privacy" className="link-quiet">
-              privacy policy
-            </Link>
-            . No passwords are stored.
-          </p>
+
         </div>
       </div>
     </section>

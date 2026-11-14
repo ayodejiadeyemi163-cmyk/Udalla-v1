@@ -16,6 +16,19 @@ const bannedPhrases = [
   /lawyers? (files|filed|prepare|prepares|submit|submits)/i,
   /attorney/i,
   /guaranteed approval/i,
+  /\bsimple\b/i,
+  /\beasy\b/i,
+  /\beffortless\b/i,
+  /\bseamless\b/i,
+  /\bhassle\b/i,
+  /\bstress\b/i,
+  /\beverything you need\b/i,
+  /\bin one place\b/i,
+  /\bunlock\b/i,
+  /\bjourney\b/i,
+  /\bstreamlined\b/i,
+  /\brobust\b/i,
+  /\bsolution\b/i,
 ];
 
 async function walk(target) {

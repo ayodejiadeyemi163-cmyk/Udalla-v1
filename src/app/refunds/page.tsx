@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Refund policy",
   description:
     "When Udalla refunds a service fee, when a government fee cannot be refunded, and how to ask.",
-  alternates: { canonical: "/refunds" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/refunds" } : undefined,
 };
 
 export default function RefundsPage() {

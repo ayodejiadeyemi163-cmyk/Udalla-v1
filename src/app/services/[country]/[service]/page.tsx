@@ -29,7 +29,7 @@ export async function generateMetadata({
   return {
     title: entry.name,
     description: entry.shortDescription,
-    alternates: { canonical: `/services/${entry.country}/${entry.slug}` },
+    alternates: process.env.NODE_ENV === "production" ? { canonical: `/services/${entry.country}/${entry.slug}` } : undefined,
     openGraph: {
       title: `${entry.name} with Udalla`,
       description: entry.shortDescription,
@@ -149,8 +149,8 @@ export default async function ServicePage({
                   </p>
                 </div>
                 <div>
-                  <p className="eyebrow">Processing</p>
-                  <p className="mt-1 max-w-[26ch] text-[13px] text-navy-950/75">{entry.processing}</p>
+                  <p className="eyebrow">Timing</p>
+                  <p className="mt-1 max-w-[26ch] text-[13px] text-navy-950/75">Timing depends on the registry.</p>
                 </div>
               </div>
 
@@ -241,9 +241,6 @@ export default async function ServicePage({
               <h2 className="display mt-3 text-[clamp(1.8rem,1.4rem+1.6vw,2.6rem)]">
                 About this registration
               </h2>
-              <p className="mt-3 text-[13.5px] leading-relaxed text-navy-950/70">
-                Something missing? Send it to the team and we will answer in plain language.
-              </p>
             </div>
             <div className="lg:col-span-8">
               <FaqList faqs={entry.faqs.map((faq, index) => ({ ...faq, id: `${entry.slug}-${index}`, sortOrder: index }))} />

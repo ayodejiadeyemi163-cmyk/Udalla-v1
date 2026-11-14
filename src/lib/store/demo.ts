@@ -82,45 +82,36 @@ function defaultSettings(): SiteSettings {
 const homeFaqs: Faq[] = [
   {
     id: "faq_1",
-    question: "How long does a registration take?",
+    question: "How much does it cost?",
     answer:
-      "It depends on the registry. Nigerian business names usually clear in 3 to 7 working days after the name is approved, UK incorporations in 24 to 72 hours, and US state filings in 2 to 5 business days. Your dashboard shows the current stage at every point.",
+      "Service fee by package plus the government fee at cost, shown before you pay.",
     sortOrder: 1,
   },
   {
     id: "faq_2",
-    question: "What do the packages include?",
-    answer:
-      "Every package includes the filing prepared and submitted by our filing team, your certificate and registration documents, dashboard tracking and compliance alerts. Standard adds tax ID help and a company documents pack. Premium adds priority processing, a registered office or agent for year one and a compliance consultation.",
+    question: "Are government fees included?",
+    answer: "No, charged at cost and shown separately.",
     sortOrder: 2,
   },
   {
     id: "faq_3",
-    question: "Are government fees included in the price?",
-    answer:
-      "No. Government fees are shown separately at cost, before you pay, so you can see exactly what goes to the registry. If a fee is waived, the waiver is shown in your total.",
+    question: "How long does it take?",
+    answer: "Timing depends on the registry. Your dashboard shows each stage.",
     sortOrder: 3,
   },
   {
     id: "faq_4",
-    question: "Can I register a business from outside the country?",
+    question: "Who files my registration?",
     answer:
-      "Yes for the UK and the US. For Nigeria you need a Nigerian address and the required identification for every owner. You can complete the whole order online and upload documents from anywhere.",
+      "Udalla's filing team prepares and submits it. Licensed partner lawyers handle regulatory compliance.",
     sortOrder: 4,
   },
   {
     id: "faq_5",
-    question: "Who prepares and files my registration?",
+    question: "Can I register from abroad?",
     answer:
-      "Your filing is prepared and submitted by Udalla's filing team. Licensed partner lawyers handle regulatory compliance, and they do not prepare or file registrations.",
+      "UK and US yes. Nigeria needs a Nigerian address and ID for every owner.",
     sortOrder: 5,
-  },
-  {
-    id: "faq_6",
-    question: "Can I change my order after I pay?",
-    answer:
-      "Before the filing is submitted, yes. Send a message from your dashboard and the team will update the order. After submission, changes depend on the registry and may attract a new government fee.",
-    sortOrder: 6,
   },
 ];
 

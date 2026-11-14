@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy policy",
   description:
     "How Udalla collects, uses, stores and protects personal data, including documents, filings and account information.",
-  alternates: { canonical: "/privacy" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/privacy" } : undefined,
 };
 
 export default function PrivacyPage() {

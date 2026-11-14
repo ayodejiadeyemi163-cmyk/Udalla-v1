@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Business registrations",
   description:
     "Compare business registration services in Nigeria, the United Kingdom and the United States. Packages, government fees and processing times, shown up front.",
-  alternates: { canonical: "/services" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/services" } : undefined,
 };
 
 export default async function ServicesPage({
@@ -31,7 +31,7 @@ export default async function ServicesPage({
       <PageHero
         eyebrow="Business registrations"
         title="Six registrations. One guided flow."
-        intro="Pick the country, then the structure that fits. Every package includes the filing itself, the certificate and tracking until the registry responds."
+        intro="Pick the country, then the structure."
       >
         <div className="mt-8">
           <CountryTabs current={active} basePath="/services" />
@@ -55,8 +55,7 @@ export default async function ServicesPage({
                       />
                       {service.entityLabel}
                     </span>
-                    <span className="mono text-[12px] text-slate-muted">{service.processing}</span>
-                  </div>
+                    </div>
                   <h2 className="mt-5 font-display text-[26px] leading-tight tracking-[-0.03em]">
                     <Link href={`/services/${service.country}/${service.slug}`} className="hover:text-navy-900">
                       {service.name}
@@ -102,7 +101,6 @@ export default async function ServicesPage({
               <div key={country.slug}>
                 <p className="eyebrow">{country.name}</p>
                 <p className="mt-2 text-[13.5px] leading-relaxed text-navy-950/70">
-                  {country.governmentLine}
                 </p>
                 <Link href={`/services/${country.slug}`} className="link-quiet mt-3 inline-block text-[13px]">
                   Open {country.shortName} services

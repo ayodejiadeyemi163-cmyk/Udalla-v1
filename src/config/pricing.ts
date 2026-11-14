@@ -135,7 +135,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: false,
     governmentFeeWaived: false,
     governmentFeeLabel: "CAC filing fee",
-    processing: "Usually 3 to 7 working days after the name is approved.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Nature of business",
     shareCapital: false,
     entityLabel: "Business name",
@@ -209,7 +209,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: true,
     governmentFeeWaived: false,
     governmentFeeLabel: "CAC fee and stamp duty",
-    processing: "Usually 5 to 10 working days after the name is approved.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Principal business activity",
     shareCapital: true,
     entityLabel: "Limited company",
@@ -297,7 +297,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: false,
     governmentFeeWaived: false,
     governmentFeeLabel: "CAC filing fee",
-    processing: "Usually 8 to 15 working days, including the newspaper publication.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Purpose of the organisation",
     shareCapital: false,
     entityLabel: "Incorporated trustees",
@@ -371,7 +371,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: false,
     governmentFeeWaived: false,
     governmentFeeLabel: "Companies House fee",
-    processing: "Usually 24 to 72 hours after submission.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Nature of business (SIC code)",
     shareCapital: true,
     entityLabel: "Private limited company",
@@ -425,8 +425,7 @@ export const services: ServiceDefinition[] = [
       },
       {
         question: "When is the confirmation statement due?",
-        answer:
-          "Every 12 months from incorporation. We add the date to your compliance calendar after the company is registered.",
+        answer: "Timing depends on the registry.",
       },
     ],
   },
@@ -444,7 +443,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: false,
     governmentFeeWaived: false,
     governmentFeeLabel: "Delaware filing fee",
-    processing: "Usually 2 to 5 business days.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Business activity",
     shareCapital: false,
     entityLabel: "LLC",
@@ -494,7 +493,7 @@ export const services: ServiceDefinition[] = [
       {
         question: "What is the annual cost in Delaware?",
         answer:
-          "Delaware charges a yearly franchise tax of 300 dollars for an LLC, due by 1 June. We add the date to your calendar and can file it for you.",
+          "Delaware charges a yearly franchise tax for an LLC. We add the date to your calendar and can file it for you.",
       },
       {
         question: "Can one person own the whole LLC?",
@@ -517,7 +516,7 @@ export const services: ServiceDefinition[] = [
     governmentFeeFrom: false,
     governmentFeeWaived: false,
     governmentFeeLabel: "Wyoming filing fee",
-    processing: "Usually 2 to 5 business days.",
+    processing: "Timing depends on the registry.",
     activityLabel: "Business activity",
     shareCapital: false,
     entityLabel: "LLC",
@@ -567,7 +566,7 @@ export const services: ServiceDefinition[] = [
       {
         question: "What is the annual report fee?",
         answer:
-          "Wyoming charges a minimum annual report fee of 60 dollars, due on the first day of the anniversary month. We remind you 30 and 7 days before.",
+          "Wyoming charges a minimum annual report fee. Timing depends on the registry.",
       },
       {
         question: "Is a registered agent required?",
@@ -613,8 +612,7 @@ export const complianceServices: ComplianceService[] = [
     faqs: [
       {
         question: "When are annual returns due?",
-        answer:
-          "For a company, within 42 days of the annual general meeting. For a business name, by 30 June each year. We track the date for you.",
+        answer: "Timing depends on the registry. We track the date for you.",
       },
       {
         question: "What happens if returns are late?",
@@ -724,8 +722,7 @@ export const complianceServices: ComplianceService[] = [
     faqs: [
       {
         question: "How often is it due?",
-        answer:
-          "Every 12 months, within 14 days of the review period end. We remind you 30 and 7 days before.",
+        answer: "Timing depends on the registry.",
       },
       {
         question: "Is the government fee included?",
@@ -752,7 +749,7 @@ export const complianceServices: ComplianceService[] = [
     faqs: [
       {
         question: "When is the Delaware LLC tax due?",
-        answer: "By 1 June each year. Wyoming reports are due on the anniversary month.",
+        answer: "Timing depends on the registry.",
       },
       {
         question: "What if I miss the deadline?",
@@ -878,10 +875,6 @@ export const websiteTiers: WebsiteTier[] = [
 export const priceNote =
   "Government fees are set by the registries and can change. Your total is shown before you pay.";
 
-/**
- * Hero price line. Kept here so the three symbols are written once.
- */
-export const heroPriceLine = "From ₦35,000, £49 or $49, plus government fees";
 
 export function getService(slug: string | undefined): ServiceDefinition | undefined {
   return services.find((service) => service.slug === slug);

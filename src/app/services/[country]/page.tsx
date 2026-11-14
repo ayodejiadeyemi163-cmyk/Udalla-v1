@@ -22,7 +22,7 @@ export async function generateMetadata({
   return {
     title: `Business registration in ${entry.name}`,
     description: `Register a business in ${entry.name}. Fixed package prices, government fees at cost and a dashboard that tracks every stage.`,
-    alternates: { canonical: `/services/${entry.slug}` },
+    alternates: process.env.NODE_ENV === "production" ? { canonical: `/services/${entry.slug}` } : undefined,
   };
 }
 
@@ -47,7 +47,7 @@ export default async function CountryServicesPage({
       <PageHero
         eyebrow={`${entry.name} registrations`}
         title={`Register a business in ${entry.name}`}
-        intro={`Choose the structure, see the package prices and the government fee before you start. ${entry.governmentLine}`}
+        intro="Choose the structure."
       >
         <div className="mt-8 flex flex-wrap items-center gap-2">
           {countries.map((other) => (
@@ -116,7 +116,6 @@ export default async function CountryServicesPage({
                       ? ""
                       : `${service.governmentFeeFrom ? "from " : ""}${formatMoney(service.governmentFee, service.currency)}`}
                   </p>
-                  <p className="mt-3 text-[12px] text-slate-muted">{service.processing}</p>
                   <Link
                     href={`/services/${country}/${service.slug}`}
                     className="btn btn-primary mt-5 w-full"

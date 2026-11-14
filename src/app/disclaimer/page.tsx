@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Disclaimer",
   description:
     "Udalla is not a law firm and does not provide legal advice. What that means for your order.",
-  alternates: { canonical: "/disclaimer" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/disclaimer" } : undefined,
 };
 
 export default function DisclaimerPage() {

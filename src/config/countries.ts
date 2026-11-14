@@ -5,8 +5,6 @@ export interface Country {
   name: string;
   shortName: string;
   currency: "NGN" | "GBP" | "USD";
-  fromPrice: number;
-  governmentLine: string;
   mark: "ng" | "uk" | "us";
   timezone: string;
   active: boolean;
@@ -18,8 +16,6 @@ export const countries: Country[] = [
     name: "Nigeria",
     shortName: "Nigeria",
     currency: "NGN",
-    fromPrice: 35000,
-    governmentLine: "CAC filings. Government fees from 10,000.",
     mark: "ng",
     timezone: "Africa/Lagos",
     active: true,
@@ -29,8 +25,6 @@ export const countries: Country[] = [
     name: "United Kingdom",
     shortName: "UK",
     currency: "GBP",
-    fromPrice: 49,
-    governmentLine: "Companies House filings. Government fee 100.",
     mark: "uk",
     timezone: "Europe/London",
     active: true,
@@ -40,8 +34,6 @@ export const countries: Country[] = [
     name: "United States",
     shortName: "US",
     currency: "USD",
-    fromPrice: 49,
-    governmentLine: "State filings in Delaware and Wyoming.",
     mark: "us",
     timezone: "America/New_York",
     active: true,

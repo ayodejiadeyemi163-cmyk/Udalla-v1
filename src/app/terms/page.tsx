@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms of service",
   description:
     "The terms that apply when you order a registration or compliance service from Udalla.",
-  alternates: { canonical: "/terms" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/terms" } : undefined,
 };
 
 export default function TermsPage() {

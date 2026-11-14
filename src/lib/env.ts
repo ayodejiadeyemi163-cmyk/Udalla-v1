@@ -4,11 +4,21 @@ export function isDemoMode(): boolean {
   return process.env.DEMO_MODE === "true";
 }
 
-export function hasSupabaseConfig(): boolean {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+export function supabasePublicKey(): string | undefined {
+  return (
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   );
+}
+
+export function supabaseSecretKey(): string | undefined {
+  return (
+    process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
+
+export function hasSupabaseConfig(): boolean {
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && supabasePublicKey());
 }
 
 export function isProduction(): boolean {

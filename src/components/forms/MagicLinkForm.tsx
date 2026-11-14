@@ -11,7 +11,7 @@ export function MagicLinkForm({ disabled }: { disabled: boolean }) {
     <form action={action} className="mt-5 space-y-3">
       <div>
         <label className="label" htmlFor="email">
-          Email address
+          Email
         </label>
         <input
           id="email"
@@ -19,7 +19,6 @@ export function MagicLinkForm({ disabled }: { disabled: boolean }) {
           type="email"
           autoComplete="email"
           className="field"
-          placeholder="you@company.com"
           required
           disabled={disabled}
         />
@@ -28,7 +27,7 @@ export function MagicLinkForm({ disabled }: { disabled: boolean }) {
         ) : null}
       </div>
       <button type="submit" className="btn btn-navy w-full" disabled={disabled || pending}>
-        {pending ? "Sending link" : "Email me a sign in link"}
+        {pending ? "Sending link" : "Send login link"}
       </button>
       {state.message ? (
         <p
@@ -37,12 +36,6 @@ export function MagicLinkForm({ disabled }: { disabled: boolean }) {
           }`}
         >
           {state.message}
-        </p>
-      ) : null}
-      {disabled ? (
-        <p className="text-[11.5px] leading-relaxed text-slate-muted">
-          Email links need Supabase keys. In this preview, the demo accounts below sign you
-          straight in.
         </p>
       ) : null}
     </form>

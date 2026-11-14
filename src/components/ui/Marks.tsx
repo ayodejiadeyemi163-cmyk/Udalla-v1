@@ -119,9 +119,7 @@ export function Stamp({ className = "" }: { className?: string }) {
       <circle cx="60" cy="60" r="52" stroke="currentColor" strokeWidth="1.2" opacity="0.55" />
       <circle cx="60" cy="60" r="43" stroke="currentColor" strokeWidth="0.8" opacity="0.35" strokeDasharray="2 4" />
       <path d="M40 61l14 14 27-30" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="60" y="94" textAnchor="middle" fontFamily="monospace" fontSize="7" letterSpacing="2" fill="currentColor" opacity="0.7">
-        REGISTERED
-      </text>
+
     </svg>
   );
 }

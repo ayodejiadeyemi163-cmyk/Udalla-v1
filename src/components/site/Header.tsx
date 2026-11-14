@@ -119,7 +119,7 @@ export function Header({ groups, contact, user }: HeaderProps) {
               href={contact.whatsappHref}
               className="block text-[11.5px] text-slate-muted hover:text-navy-900"
             >
-              WhatsApp, {contact.hours.replace("We reply within ", "").toLowerCase()}
+              WhatsApp, we reply within 24 hours, Monday to Saturday.
             </a>
           </div>
           <Link

@@ -20,7 +20,7 @@ export async function generateMetadata({
   return {
     title: guide.title,
     description: guide.excerpt,
-    alternates: { canonical: `/guides/${guide.slug}` },
+    alternates: process.env.NODE_ENV === "production" ? { canonical: `/guides/${guide.slug}` } : undefined,
     openGraph: {
       type: "article",
       title: guide.title,

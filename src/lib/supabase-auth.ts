@@ -2,7 +2,7 @@ import "server-only";
 
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { hasSupabaseConfig } from "./env";
+import { hasSupabaseConfig, supabasePublicKey } from "./env";
 
 /**
  * Supabase auth client used only on the server, with cookies so the PKCE
@@ -11,10 +11,12 @@ import { hasSupabaseConfig } from "./env";
 export async function supabaseAuth() {
   if (!hasSupabaseConfig()) return null;
   const cookieStore = await cookies();
+  const key = supabasePublicKey();
+  if (!key) return null;
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string,
+    key,
     {
       cookies: {
         getAll() {

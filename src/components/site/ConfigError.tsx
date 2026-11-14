@@ -13,7 +13,8 @@ export function ConfigError({ message }: { message: string }) {
           <p className="eyebrow mb-2">What to set</p>
           <p>
             Either add <span className="mono">NEXT_PUBLIC_SUPABASE_URL</span> and{" "}
-            <span className="mono">NEXT_PUBLIC_SUPABASE_ANON_KEY</span>, or set{" "}
+            <span className="mono">NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</span> (or{" "}
+            <span className="mono">NEXT_PUBLIC_SUPABASE_ANON_KEY</span>), or set{" "}
             <span className="mono">DEMO_MODE=true</span> for a preview with demo data.
           </p>
           <p className="mt-3">

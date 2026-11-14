@@ -137,7 +137,7 @@ export function EnquiryForm({ defaultType }: { defaultType?: string }) {
         <button type="submit" className="btn btn-primary" disabled={pending}>
           {pending ? "Sending" : "Send enquiry"}
         </button>
-        <p className="text-[11.5px] text-slate-muted">We reply within 24 hours, Monday to Saturday.</p>
+
       </div>
     </form>
   );

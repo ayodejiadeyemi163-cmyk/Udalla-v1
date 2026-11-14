@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { priceNote } from "@/config/pricing";
 import type { ServiceDefinition } from "@/config/pricing";
 import { formatMoney } from "@/lib/money";
 import { Check } from "@/components/ui/Marks";
@@ -18,15 +17,6 @@ export function PackageCards({
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <CountryTabs current={country} basePath={basePath} />
-        <p className="text-[12.5px] text-slate-muted">
-          Packages for{" "}
-          <Link
-            href={`/services/${service.country}/${service.slug}`}
-            className="link-quiet"
-          >
-            {service.name}
-          </Link>
-        </p>
       </div>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -76,12 +66,9 @@ export function PackageCards({
         })}
       </div>
 
-      <div className="mt-6 flex flex-col gap-2">
-        <p className="text-[12px] text-slate-muted">{priceNote}</p>
-        <Link href="/pricing" className="link-quiet self-start text-[13px]">
-          Compare all packages and government fees
-        </Link>
-      </div>
+      <p className="mt-6 text-[12px] text-slate-muted">
+        Government fees are charged at cost and shown before you pay.
+      </p>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: service.name,
     description: service.summary,
-    alternates: { canonical: `/compliance/${service.slug}` },
+    alternates: process.env.NODE_ENV === "production" ? { canonical: `/compliance/${service.slug}` } : undefined,
   };
 }
 

@@ -14,8 +14,8 @@ import { formatMoney } from "@/lib/money";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Every Udalla package and government fee in one place. Nigeria, the United Kingdom and the United States, with the total shown before you pay.",
-  alternates: { canonical: "/pricing" },
+    "Packages and government fees for Nigeria, the United Kingdom and the United States.",
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/pricing" } : undefined,
 };
 
 const PACKAGE_COPY: Record<PackageTier, { name: string; badge?: string; summary: string }> = {
@@ -70,9 +70,9 @@ export default async function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="The price you see is the price you pay."
-        intro="Three packages per service. Government fees are separate and shown at cost, because the registries set them, not us."
+
       >
-        <p className="mt-6 max-w-2xl text-[13px] text-navy-950/65">{priceNote}</p>
+
       </PageHero>
 
       <section className="bg-cream-50">
@@ -132,8 +132,7 @@ export default async function PricingPage() {
             <h2 className="display text-[clamp(1.8rem,1.4rem+1.6vw,2.6rem)]">
               Every service, every package
             </h2>
-            <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-navy-950/70">
-            </p>
+
 
             <div className="mt-8 space-y-10">
               {countries.map((country) => {
@@ -178,9 +177,7 @@ export default async function PricingPage() {
                                 >
                                   {service.name}
                                 </Link>
-                                <p className="mono mt-0.5 text-[11px] text-slate-muted">
-                                  {service.processing}
-                                </p>
+
                               </td>
                               {packageOrder.map((tier) => {
                                 const pack = service.packages.find((entry) => entry.tier === tier);
@@ -254,16 +251,13 @@ export default async function PricingPage() {
 
           <div className="card mt-12 p-6 md:p-8">
             <h2 className="font-display text-[22px] tracking-[-0.025em]">Compliance after registration</h2>
-            <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-navy-950/70">
-              Yearly and one-off compliance services are priced separately. They are invoiced
-              and reminded, never charged automatically.
-            </p>
+
             <Link href="/compliance" className="btn btn-outline mt-5">
               See compliance prices
             </Link>
           </div>
 
-          <p className="mt-8 max-w-3xl text-[12px] text-slate-muted">{priceNote}</p>
+<p className="mt-8 text-[12px] text-slate-muted">Government fees are charged at cost and shown before you pay.</p>
         </div>
       </section>
 

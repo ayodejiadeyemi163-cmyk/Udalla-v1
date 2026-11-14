@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Guides",
   description:
     "Plain guides to registering and running a business in Nigeria, the United Kingdom and the United States.",
-  alternates: { canonical: "/guides" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/guides" } : undefined,
 };
 
 export default async function GuidesPage({
@@ -30,7 +30,7 @@ export default async function GuidesPage({
       <PageHero
         eyebrow="Guides"
         title="Read once, file once."
-        intro="Short explanations of the parts founders get stuck on: names, ownership, registered addresses and the deadlines that follow."
+
       />
 
       <section className="bg-cream-50">
@@ -69,9 +69,7 @@ export default async function GuidesPage({
             {guides.length > 0 ? (
               <GuideCards guides={guides} />
             ) : (
-              <p className="text-[14px] text-navy-950/70">
-                No guides for this country yet. The full list is still available.
-              </p>
+              <p className="text-[14px] text-navy-950/70">No guides for this country.</p>
             )}
           </div>
 

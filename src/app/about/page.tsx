@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ClosingBanner } from "@/components/site/ClosingBanner";
-import { LawyerCards } from "@/components/site/LawyerCards";
 import { PageHero } from "@/components/site/PageHero";
 import { CountryMark, Stamp } from "@/components/ui/Marks";
 import { brand } from "@/config/brand";
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Udalla is a business registration and compliance platform for founders in Nigeria, the United Kingdom and the United States.",
-  alternates: { canonical: "/about" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/about" } : undefined,
 };
 
 export default async function AboutPage() {
@@ -26,7 +25,7 @@ export default async function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Registration should feel like a checklist."
-        intro={`${brand.legalName} runs filings in three countries through one dashboard. You always know the price, the stage and the next date that matters.`}
+        intro={`${brand.legalName} runs filings in Nigeria, the UK and the US.`}
       />
 
       <section className="bg-cream-50">
@@ -87,16 +86,7 @@ export default async function AboutPage() {
                 ))}
               </div>
 
-              <div className="mt-10 border-t border-cream-300 pt-6">
-                <p className="eyebrow">Proof points</p>
-                <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-2">
-                  {brand.proofPoints.map((point) => (
-                    <li key={point} className="text-[14px] text-navy-950/75">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
             </div>
 
             <aside className="lg:col-span-5">
@@ -138,18 +128,7 @@ export default async function AboutPage() {
             </aside>
           </div>
 
-          <div className="mt-14 border-t border-cream-300 pt-10">
-            <p className="eyebrow">Partner lawyers</p>
-            <h2 className="display mt-3 text-[clamp(2rem,1.5rem+2vw,3.2rem)]">
-              {brand.lawyerSectionTitle}
-            </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-navy-950/75">
-              {contact.lawyerNote}
-            </p>
-            <div className="mt-6">
-              <LawyerCards />
-            </div>
-          </div>
+
         </div>
       </section>
 

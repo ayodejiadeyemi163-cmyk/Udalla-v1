@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ClosingBanner } from "@/components/site/ClosingBanner";
-import { LawyerCards } from "@/components/site/LawyerCards";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowRight, CountryMark } from "@/components/ui/Marks";
 import { brand } from "@/config/brand";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
   title: "Compliance",
   description:
     "Annual returns, beneficial ownership filings, tax IDs, confirmation statements and registered agent renewals for Nigeria, the UK and the US.",
-  alternates: { canonical: "/compliance" },
+  alternates: process.env.NODE_ENV === "production" ? { canonical: "/compliance" } : undefined,
 };
 
 export default async function CompliancePage() {
@@ -27,7 +26,7 @@ export default async function CompliancePage() {
       <PageHero
         eyebrow="Compliance"
         title="Stay in good standing, without the calendar maths."
-        intro="Every filing has a date and a consequence. We track the dates, remind you 30 and 7 days before, and handle the filing when you approve it."
+
       />
 
       <section className="bg-cream-50">
@@ -38,11 +37,11 @@ export default async function CompliancePage() {
             {[
               {
                 title: "Dates tracked",
-                body: "Annual returns, confirmation statements and annual reports are added to your calendar the day the company is registered.",
+                body: "Deadlines are added to your calendar after registration.",
               },
               {
                 title: "Reminders that arrive early",
-                body: "Email reminders go out 30 and 7 days before each deadline, with the price and what is needed.",
+                body: "Reminders go out before each deadline.",
               },
               {
                 title: "Nothing charged quietly",
@@ -104,23 +103,7 @@ export default async function CompliancePage() {
             })}
           </div>
 
-          <div className="mt-14 grid gap-10 border-t border-cream-300 pt-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <p className="eyebrow">Partner lawyers</p>
-              <h2 className="display mt-3 text-[clamp(2rem,1.5rem+2vw,3.2rem)]">
-                {brand.lawyerSectionTitle}
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-navy-950/75">{brand.filingNote}</p>
-              <p className="mt-4 text-[13px] leading-relaxed text-slate-muted">
-                Compliance requests create a matter, assigned to a partner lawyer in that
-                jurisdiction. You follow the timeline and message them from your dashboard.
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <LawyerCards />
-              <p className="mt-5 text-[12.5px] text-slate-muted">{contact.lawyerNote}</p>
-            </div>
-          </div>
+
         </div>
       </section>
 
